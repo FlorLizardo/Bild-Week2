@@ -108,16 +108,15 @@ popolaAmici();
 
 const playlist = [
 
-'pl1',
-'sdzfòkjn',
-'sadfdjf',
-'ssdlfdxjglòflgfg',
-'pl1',
-'sdzfòkjn',
-'sadfdjf',
-'ssdlfdxjglòflgfg',
-'pl1',
-'sdzfòkjn',
+'Micini Tattici Nucleari',
+'Merry Meowy Christmas',
+'Gittame Mucho',
+'Panic! at the GitHub',
+'Piripiripi',
+'Pippo, Pluto e Paperino - Remastered',
+'Console Horror Vol.3',
+'z-index 999',
+'Bug Life',
 'sadfdjf',
 'ssdlfdxjglòflgfg',
 'pl1',
@@ -182,7 +181,7 @@ function creaPlaylist () {
         anchor.style.textDecoration = 'none';
         anchor.classList.add('text-light');
         let li = document.createElement('li');
-        li.classList.add('list-group-item');
+        li.classList.add('list-group-item', 'smaller', 'fw-light');
         anchor.innerHTML= element;
         li.appendChild(anchor);
         ul.appendChild(li);
