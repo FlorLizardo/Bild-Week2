@@ -57,23 +57,23 @@ amici.forEach(amici => {
     col1.classList.add('col-xl-3');
     let avatarAmico = document.createElement('img');
     avatarAmico.classList.add('object-fit-cover', 'rounded-circle');
-    avatarAmico.style.height = '40px';
-    avatarAmico.style.width = '40px';
+    avatarAmico.style.height = '60px';
+    avatarAmico.style.width = '60px';
     avatarAmico.src = amici.img;
 
 
     
     let col2 = document.createElement('div');
-    col2.classList.add('col-xl-6', 'my-3');
+    col2.classList.add('col-xl-6', 'my-3', 'text-center');
     let nomeAmico = document.createElement('p');
-    nomeAmico.style.fontSize = '12px';
+    nomeAmico.style.fontSize = '14px';
     nomeAmico.style.fontWeight = 'bold';
     nomeAmico.innerText = amici.nome;
     let canzone = document.createElement('p');
-    canzone.style.fontSize = '10px';
+    canzone.style.fontSize = '12px';
     canzone.innerText = amici.canzone;
     let cd = document.createElement('p');
-    cd.style.fontSize = '10px';
+    cd.style.fontSize = '12px';
     cd.innerText = amici.album;
 
 
@@ -82,7 +82,7 @@ amici.forEach(amici => {
     let col3 = document.createElement('div');
     col3.classList.add('col-xl-3');
     let minuti = document.createElement('p');
-    minuti.style.fontSize = '8px';
+    minuti.style.fontSize = '10px';
     minuti.innerText = amici.minuti;
 
     
@@ -203,7 +203,3 @@ function creaPlaylist () {
 
 creaPlaylist();
 
-/*
-<ul>
-    <li><a href="">òkfdkjgn</a></li>
-</ul>*/
