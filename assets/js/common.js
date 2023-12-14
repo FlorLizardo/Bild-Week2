@@ -109,9 +109,8 @@ popolaAmici();
 const playlist = [
 
 'Micini Tattici Nucleari',
-'Merry Meowy Christmas',
 'Gittame Mucho',
-'Panic! at the GitHub',
+'Panic! at the Discord',
 'Piripiripi',
 'Pippo, Pluto e Paperino - Remastered',
 'Console Horror Vol.3',
