@@ -1,35 +1,38 @@
-
-
 const amici = [
 
     {
         img: './assets/img/edoardo.jpg',
         nome: 'Mercy',
-        canzone: 'test test',
+        canzone: 'canzone 1',
+        album: 'album1',
         minuti: '8min',
     },
     {
         img: './assets/img/florencia.jpg',
         nome: 'Cleopatra',
-        canzone: 'test test',
+        canzone: 'canzone 2',
+        album: 'album2',
         minuti: '6min',
     },
     {
         img: './assets/img/edoardo2.jpg',
         nome: 'Orione',
-        canzone: 'test test',
+        canzone: 'canzone 3',
+        album: 'album3',
         minuti: '1min',
     },
     {
         img: './assets/img/thomas1.jpg',
         nome: 'Isara',
-        canzone: 'test test',
+        canzone: 'canzone 4',
+        album: 'album4',
         minuti: '9min',
     },
     {
         img: './assets/img/thomas2.jpg',
         nome: 'Martino',
-        canzone: 'test test',
+        canzone: 'canzone 5',
+        album: 'album5',
         minuti: '2min',
     },
    
@@ -48,6 +51,7 @@ amici.forEach(amici => {
 
     let row = document.createElement('div');
     row.classList.add('row');
+    row.style.lineHeight = '4px';
 
     let col1 = document.createElement('div');
     col1.classList.add('col-xl-3');
@@ -60,12 +64,17 @@ amici.forEach(amici => {
 
     
     let col2 = document.createElement('div');
-    col2.classList.add('col-xl-6');
+    col2.classList.add('col-xl-6', 'my-3');
     let nomeAmico = document.createElement('p');
+    nomeAmico.style.fontSize = '12px';
+    nomeAmico.style.fontWeight = 'bold';
     nomeAmico.innerText = amici.nome;
     let canzone = document.createElement('p');
-    canzone.classList.add('small')
+    canzone.style.fontSize = '10px';
     canzone.innerText = amici.canzone;
+    let cd = document.createElement('p');
+    cd.style.fontSize = '10px';
+    cd.innerText = amici.album;
 
 
 
@@ -73,13 +82,14 @@ amici.forEach(amici => {
     let col3 = document.createElement('div');
     col3.classList.add('col-xl-3');
     let minuti = document.createElement('p');
-    minuti.classList.add('small');
+    minuti.style.fontSize = '8px';
     minuti.innerText = amici.minuti;
 
     
     col1.appendChild(avatarAmico);
     col2.appendChild(nomeAmico);
     col2.appendChild(canzone);
+    col2.appendChild(cd);
     col3.appendChild(minuti);
 
     row.appendChild(col1);
@@ -112,16 +122,15 @@ const playlist = [
 'Gittame Mucho',
 'Panic! at the Discord',
 'Piripiripi',
-'Pippo, Pluto e Paperino - Remastered',
+'Il Pippo, il Pluto e il Paperino',
 'Console Horror Vol.3',
-'z-index 999',
+'z-index 999 venuto dallo spazio',
 'Bug Life',
-'sadfdjf',
-'ssdlfdxjglòflgfg',
 'pl1',
 'sdzfòkjn',
 'sadfdjf',
 'ssdlfdxjglòflgfg',
+'pl1',
 'pl1',
 'sdzfòkjn',
 'sadfdjf',
@@ -180,7 +189,8 @@ function creaPlaylist () {
         anchor.style.textDecoration = 'none';
         anchor.classList.add('text-light');
         let li = document.createElement('li');
-        li.classList.add('list-group-item', 'smaller', 'fw-light');
+        li.classList.add('list-group-item', 'text-dark');
+        li.style.fontSize = '12px';
         anchor.innerHTML= element;
         li.appendChild(anchor);
         ul.appendChild(li);
