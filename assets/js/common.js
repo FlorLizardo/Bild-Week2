@@ -45,8 +45,6 @@ const amici = [
 
 console.log(amici);
 
-
-    
 function popolaAmici() {
 amici.forEach(amici => {
 
@@ -76,46 +74,31 @@ amici.forEach(amici => {
     cd.style.fontSize = '12px';
     cd.innerText = amici.album;
 
+		let col3 = document.createElement("div");
+		col3.classList.add("col-xl-3", "pt-3");
+		let minuti = document.createElement("p");
+		minuti.style.fontSize = "10px";
+		minuti.innerText = amici.minuti;
 
+		col1.appendChild(avatarAmico);
+		col2.appendChild(nomeAmico);
+		col2.appendChild(canzone);
+		col2.appendChild(cd);
+		col3.appendChild(minuti);
 
-    
-    let col3 = document.createElement('div');
-    col3.classList.add('col-xl-3');
-    let minuti = document.createElement('p');
-    minuti.style.fontSize = '10px';
-    minuti.innerText = amici.minuti;
+		row.appendChild(col1);
+		row.appendChild(col2);
+		row.appendChild(col3);
 
-    
-    col1.appendChild(avatarAmico);
-    col2.appendChild(nomeAmico);
-    col2.appendChild(canzone);
-    col2.appendChild(cd);
-    col3.appendChild(minuti);
+		let colAmici = document.getElementById("amici");
 
-    row.appendChild(col1);
-    row.appendChild(col2);
-    row.appendChild(col3);
-
-
-
-
-    let colAmici = document.getElementById('amici');
-
-    colAmici.appendChild(row);
-    
-
-
-
-
-});
+		colAmici.appendChild(row);
+	});
 }
-
 
 popolaAmici();
 
-
-
-
+//Sezione Playlist Colonna sx
 const playlist = [
 
 'Micini Tattici Nucleari',
@@ -198,7 +181,6 @@ function creaPlaylist () {
     });
     console.log(playlist);
 }
-
 
 creaPlaylist();
 
