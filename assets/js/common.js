@@ -54,7 +54,7 @@ amici.forEach(amici => {
     row.style.lineHeight = '6px';
 
     let col1 = document.createElement('div');
-    col1.classList.add('col-xl-3');
+    col1.classList.add('col-xl-3', 'ps-0');
     let avatarAmico = document.createElement('img');
     avatarAmico.classList.add('object-fit-cover', 'rounded-circle');
     avatarAmico.style.height = '60px';

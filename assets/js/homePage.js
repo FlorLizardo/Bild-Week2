@@ -85,7 +85,7 @@ function cardPlaylist(data) {
   
   let stampina =
    `
-  <div class="col-xl-12 d-flex column-gap-2 bg-secondary p-0 playlistCol">
+  <div class="col-xl-12 d-flex column-gap-2 my-1 bg-secondary p-0 playlistCol">
   <div class="p-0">
             <img
             src="${data.cover_small}"
@@ -121,7 +121,7 @@ const cardVerticali = [
   "52845302",
   "52845302",
   "317985097",
-  "52845302",
+  "52845302"
   
 ];
 
