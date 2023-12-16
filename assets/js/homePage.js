@@ -1,24 +1,16 @@
-const test = 'https://striveschool-api.herokuapp.com/api/deezer/album/62819462';
+const test = "https://striveschool-api.herokuapp.com/api/deezer/album/62819462";
 
-fetch(test)
-  .then(response => response.json())
-  .then(data => displayJumbotron(data))
-  .catch(error => console.error('Error:', error));
-
- 
-
-
-
-
-
-
-
-
+const getDisplayJb = () => {
+  fetch(test)
+    .then((response) => response.json())
+    .then((data) => displayJumbotron(data))
+    .catch((error) => console.error("Error:", error));
+};
 
 function displayJumbotron(data) {
-	let containerJumbotron = document.getElementById("jumbotron");
+  let containerJumbotron = document.getElementById("jumbotron");
 
-	containerJumbotron.innerHTML = `
+  containerJumbotron.innerHTML = `
     <div class="row" >
       <div class="col-xl-3">
         <img
@@ -64,4 +56,131 @@ function displayJumbotron(data) {
     </div>`;
 }
 
-displayJumbotron(data);
+/*CARDS LUNGHINE */
+const cardOrizzontali = [
+  "363906907",
+  "510894151",
+  "52845302",
+  "317985097",
+  "303572557",
+  "211834222",
+];
+
+function fetchCardOrizzontali() {
+  
+    
+  
+  for (const playlistId of cardOrizzontali) {
+    fetch(
+      `https://striveschool-api.herokuapp.com/api/deezer/album/${playlistId}`
+    )
+      .then((response) => response.json())
+      .then((data) => cardPlaylist(data));
+  }
+
+}
+
+function cardPlaylist(data) {
+  let rowPlaylist = document.getElementById('cardOblunghe');
+  
+  let stampina =
+   `
+  <div class="col-xl-12 d-flex column-gap-2 bg-secondary p-0 playlistCol">
+  <div class="p-0">
+            <img
+            src="${data.cover_small}"
+            width="70"
+            height="70"
+            class="object-fit-cover"
+            />
+            </div>
+            <div class="d-flex align-items-center">
+            <p class="h6">${data.title}</p>
+            </div>
+            </div>`
+;
+            rowPlaylist.innerHTML += stampina;
+
+
+
+  
+};
+
+
+
+/*CARDS ALTINE */
+const cardVerticali = [
+  "363906907",
+  "510894151",
+  "52845302",
+  "317985097",
+  "52845302",
+  "52845302",
+  "52845302",
+  "317985097",
+  "52845302",
+  "52845302",
+  "317985097",
+  "52845302",
+  
+];
+
+
+function fetchCardVerticali() {
+  
+    
+  
+  for (const playlistId of cardVerticali) {
+    fetch(
+      `https://striveschool-api.herokuapp.com/api/deezer/album/${playlistId}`
+    )
+      .then((response) => response.json())
+      .then((data) => {stampaCardVerticali(data);
+      console.log(data)});
+  }
+
+}
+
+function stampaCardVerticali(data) {
+  let cardAltine = document.getElementById('cardAltine');
+  
+  let stampina =
+   `
+   <div class="col-xl-2">
+   <div class="card bg-secondary text-white">
+     <img
+       src="${data.cover_medium}"
+       class="card-img-top object-fit-cover rounded-bottom m-3"
+       alt="Immagine Playlist 2"
+       style="height: 110px; width: 110px"
+     />
+     <div class="card-body">
+       <p class="card-text h6 text-light" style="font-size: 12px">
+       ${data.title}
+       </p>
+       <p class="card-text text-light" style="font-size: 10px">
+       ${data.artist.name}
+       </p>
+     </div>
+   </div>
+ </div>`
+;
+            cardAltine.innerHTML += stampina;
+
+
+
+  
+}
+
+
+
+
+
+
+
+
+window.onload = () => {
+  getDisplayJb();
+  fetchCardOrizzontali();
+  fetchCardVerticali();
+};
