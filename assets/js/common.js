@@ -43,7 +43,7 @@ const amici = [
 
 ]
 
-console.log(amici);
+
 
 function popolaAmici() {
 amici.forEach(amici => {
@@ -179,12 +179,8 @@ function creaPlaylist () {
         rowPlaylist.appendChild(ul);
 
     });
-    console.log(playlist);
+    
 }
 
 creaPlaylist();
 
-/*
-<ul>
-    <li><a href="">òkfdkjgn</a></li>
-</ul>*/

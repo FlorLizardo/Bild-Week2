@@ -1,11 +1,28 @@
-function displayJumbotron() {
+const test = 'https://striveschool-api.herokuapp.com/api/deezer/album/62819462';
+
+fetch(test)
+  .then(response => response.json())
+  .then(data => displayJumbotron(data))
+  .catch(error => console.error('Error:', error));
+
+ 
+
+
+
+
+
+
+
+
+
+function displayJumbotron(data) {
 	let containerJumbotron = document.getElementById("jumbotron");
 
 	containerJumbotron.innerHTML = `
     <div class="row" >
       <div class="col-xl-3">
         <img
-          src="./assets/img/photo_2023-12-14_09-32-24.jpg"
+          src="${data.cover}"
           width="190"
           height="190"
           class="object-fit-cover ms-0 p-2"
@@ -14,9 +31,9 @@ function displayJumbotron() {
       <div class="col-xl-9 px-3">
         <div>
           <p class="h6">ALBUM</p>
-          <h1 class="display-4">Titolo Canzone</h1>
-          <p class="h6">Nome artista</p>
-          <p class="h6">Ascolta il nuovo singolo di (nome artista)</p>
+          <h1 class="display-4">${data.title}</h1>
+          <p class="h6">${data.artist.name}</p>
+          <p class="h6">Ascolta il nuovo singolo di ${data.artist.name}</p>
         </div>
 
         <div class="my-3">
@@ -47,4 +64,4 @@ function displayJumbotron() {
     </div>`;
 }
 
-displayJumbotron();
+displayJumbotron(data);
