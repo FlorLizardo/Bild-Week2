@@ -116,12 +116,12 @@ const cardVerticali = [
   "317985097",
   "52845302",
   "52845302",
-  "52845302",
+ /* "52845302",
   "317985097",
   "52845302",
   "52845302",
   "317985097",
-  "52845302"
+  "52845302"*/
   
 ];
 
@@ -135,8 +135,7 @@ function fetchCardVerticali() {
       `https://striveschool-api.herokuapp.com/api/deezer/album/${playlistId}`
     )
       .then((response) => response.json())
-      .then((data) => {stampaCardVerticali(data);
-      console.log(data)});
+      .then((data) => stampaCardVerticali(data));
   }
 
 }
@@ -170,8 +169,75 @@ function stampaCardVerticali(data) {
 
 
   
+};
+
+
+
+
+
+
+/*CARDS ARTISTI */
+const cardArtisti = [
+  "5695",
+  "4331",
+  "14585",
+  "470538",
+  "65682",
+  "7219246",
+  "5695",
+  "4331",
+  "14585",
+  "470538",
+  "65682",
+  "7219246"
+  
+];
+
+
+function fetchCardArtisti() {
+  
+    
+  
+  for (const artistId of cardArtisti) {
+    fetch(
+      `https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}`
+    )
+      .then((response) => response.json())
+      .then((data) => stampaCardArtisti(data));
+  }
+
 }
 
+function stampaCardArtisti(data) {
+  let cardCantanti = document.getElementById('cardArtisti');
+  
+  let stampina =
+   `
+   <div class="col-xl-2">
+   <div class="card bg-secondary text-white">
+     <img
+       src="${data.picture_medium}"
+       class="card-img-top object-fit-cover rounded-circle m-3"
+       alt="Immagine Playlist 2"
+       style="height: 110px; width: 110px"
+     />
+     <div class="card-body">
+       <p class="card-text h6 text-light" style="font-size: 12px">
+       Artista
+       </p>
+       <p class="card-text text-light" style="font-size: 10px">
+       ${data.name}
+       </p>
+     </div>
+   </div>
+ </div>`
+;
+            cardCantanti.innerHTML += stampina;
+
+
+
+  
+};
 
 
 
@@ -183,4 +249,5 @@ window.onload = () => {
   getDisplayJb();
   fetchCardOrizzontali();
   fetchCardVerticali();
+  fetchCardArtisti();
 };
