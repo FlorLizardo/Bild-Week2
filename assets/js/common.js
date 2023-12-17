@@ -5,7 +5,7 @@ const amici = [
     {
         img: './assets/img/edoardo.jpg',
         nome: 'Mercy',
-        canzone: 'canzone 1',
+        canzone: 'canzone1',
         album: 'album1',
         minuti: '8min',
     },
@@ -51,7 +51,7 @@ amici.forEach(amici => {
 
     let row = document.createElement('div');
     row.classList.add('row','ms-2');
-    row.style.lineHeight = '6px';
+    row.style.lineHeight = '8px';
 
     let col1 = document.createElement('div');
     col1.classList.add('col-xl-3', 'ps-0');
@@ -102,14 +102,14 @@ popolaAmici();
 const playlist = [
 
 'Micini Tattici Nucleari',
+'Gimme! Gimme! Gimme! (A Ham After Midnight)',
 'Gittame Mucho',
 'Panic! at the Discord',
 'Piripiripi',
 'Il Pippo, il Pluto e il Paperino',
 'Console Horror Vol.3',
-'z-index 999 venuto dallo spazio',
+'z-index 999 ',
 'Debug Life',
-'pl1',
 'sdzfòkjn',
 'sadfdjf',
 'ssdlfdxjglòflgfg',
