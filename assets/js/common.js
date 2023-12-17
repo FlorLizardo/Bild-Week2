@@ -108,7 +108,7 @@ const playlist = [
 'Il Pippo, il Pluto e il Paperino',
 'Console Horror Vol.3',
 'z-index 999 venuto dallo spazio',
-'Bug Life',
+'Debug Life',
 'pl1',
 'sdzfòkjn',
 'sadfdjf',

@@ -222,12 +222,13 @@ function stampaCardArtisti(data) {
        style="height: 110px; width: 110px"
      />
      <div class="card-body">
-       <p class="card-text h6 text-light" style="font-size: 12px">
-       Artista
-       </p>
-       <p class="card-text text-light" style="font-size: 10px">
+     <p class="card-text text-light h6" style="font-size: 12px">
        ${data.name}
        </p>
+       <p class="card-text text-light" style="font-size: 10px">
+       Artista
+       </p>
+       
      </div>
    </div>
  </div>`
