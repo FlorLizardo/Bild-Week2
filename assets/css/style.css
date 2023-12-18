@@ -1,11 +1,35 @@
 *{
-     border: 1px solid rgb(56, 52, 109); 
+     /* border: 1px solid rgb(56, 52, 109);  */
     color: #fff;
 }
 
+.font-size-list {
+    font-size: .9rem;
+}
+
+.font-size-list:hover {
+    color: #1ED760!important;
+}
+
+.bg-centrale {
+    background-color: #121212;
+}
+
+.btn-play {
+    background-color: #1ED760;
+}
 
 .playlistScroll {
     height: 71.6vh;
+   
+}
+
+.bg-card-orizz {
+    background-color: #2C2C2C;
+}
+
+.bg-card-verticali {
+    background-color: #171717;
 }
 
 .divCenterScroll {
@@ -18,5 +42,10 @@
 
 .colorIcona {
     color: gray;
+}
+
+.bg-jumbotron {
+    background: rgb(0,0,0);
+background: linear-gradient(45deg, rgba(0,0,0,1) 18%, rgba(53,53,53,1) 70%);
 }
 
