@@ -114,13 +114,15 @@ const tracklist = (data) => {
 
 const getSong = (data) => {
 
-   for(let i = 0; i <= data.tracks.data.length; i++) {
-    //const nbTrack = 1;
+   for(let i = 0; i <= data.tracks.data.length; i++) {   //risolvere # progessivo
+    const nbTrack = 1;
+    
+    
     
     const rowTracks = document.getElementById('tracklist');
     let track = 
     `<div class="col-xl-1 text-secondary d-flex justify-content-end align-items-center">
-               
+               ${nbTrack} 
               </div>
               <div class="col-xl-7">
                 <div class="row">
