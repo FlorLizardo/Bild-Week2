@@ -23,8 +23,8 @@ function displayJumbotron(data) {
       <div class="col-xl-9 px-3">
         <div>
           <p class="h6">ALBUM</p>
-          <h1 class="display-4">${data.title}</h1>
-          <p class="h6">${data.artist.name}</p>
+          <a href="../../album.html?id=${data.id}" class="text-decoration-none"><h1 class="display-4 text-light">${data.title}</h1></a>
+          <a href="../../artista.html?id=${data.contributors[0].id}" class="text-decoration-none"><p class="h6 text-light">${data.artist.name}</p></a>
           <p class="h6">Ascolta il nuovo singolo di ${data.artist.name}</p>
         </div>
 

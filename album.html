@@ -225,27 +225,27 @@
             <!--contenitore scroll-->
             <!--ALBUM INFO-->
 
-            <div class="row bg-secondary">
-              <!--sfondo?? altezza?? z-index?? boh raga sono stanco-->
+            <div class="row bg-secondary" id="albumtron">
+              <!--sfondo?? altezza?? z-index?? boh raga sono stanco
               <div class="col-xl-3">
-                <img
+                 <img
                   src="./assets/img/edoardo2.jpg"
                   width="190"
                   height="190"
                   class="object-fit-cover ms-0 p-2"
-                />
+                /> 
               </div>
               <div class="col-xl-9 px-3">
                 <div>
                   <p class="h6">ALBUM</p>
                   <h1 class="display-4">${data.title}</h1>
                   <p class="h6">
-                    ${data.picture_small} ${data.artist.name} -
+                     `${data.picture_small} ${data.artist.name} -
                     ${data.release_date} - ${data.nb_tracks} brani -
-                    ${data.duration}
+                    ${data.duration}`
                   </p>
                 </div>
-              </div>
+              </div> -->
             </div>
 
             <!--PLAYER-->
@@ -333,10 +333,10 @@
             </div>
 
             <div class="row border-bottom mt-3">
-              <div class="col-1 text-end">#</div>
-              <div class="col-7">Titolo</div>
-              <div class="col-3">Riproduzioni</div>
-              <div class="col-1">
+              <div class="col-xl-1 text-end">#</div>
+              <div class="col-xl-7">Titolo</div>
+              <div class="col-xl-3">Riproduzioni</div>
+              <div class="col-xl-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -356,24 +356,19 @@
             </div>
 
             <!--TRACKLIST-->
-            <div class="row mt-3">
-              <div class="col-1 text-end text-secondary">
-                <!-- ${data.nb_tracks} -->
-                1
+            <div class="row mt-3" id="tracklist">
+              <!-- <div class="col-xl-1 text-secondary d-flex justify-content-end align-items-center">
+               ${data.nb_tracks}
               </div>
-              <div class="col-7">
+              <div class="col-xl-7">
                 <div class="row">
-                  <p class="h6 text-light text-capitalize">${data.title}</p>
+                  <div class="col-12 h6 text-light text-capitalize">${data.title}</div>               
+                  <div class="col h6 text-secondary text-capitalize">${data.name}</div>
                 </div>
-                <div class="row">
-                  <p class="h6 text-secondary text-capitalize">${data.name}</p>
-                </div>
-                <!-- <div class="col-12">${data.title}</div>
-                <div class="col">${data.name}</div> -->
               </div>
 
-              <div class="col-2 text-secondary">${data.rank}</div>
-              <div class="col-2 text-secondary">${data.duration}</div>
+              <div class="col-xl-3 text-secondary d-flex align-items-center">${data.rank}</div>
+              <div class="col-xl-1 text-secondary d-flex align-items-center">${data.duration}</div> -->
             </div>
           </div>
           <!--fine div scroll-->
@@ -670,6 +665,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="./assets/js/common.js"></script>
-    <script src="./assets/js/homePage.js"></script>
+    <script src="./assets/js/album.js"></script>
   </body>
 </html>
