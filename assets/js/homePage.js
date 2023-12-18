@@ -122,6 +122,7 @@ const cardVerticali = [
   "52845302",
   "317985097",
   "52845302"
+
   
 ];
 
@@ -147,19 +148,19 @@ function stampaCardVerticali(data) {
    `
    <div class="col-xl-2">
    <div class="card bg-secondary text-white">
-     <img
+   <a href="../../album.html?id=${data.id}" class="text-decoration-none"><img
        src="${data.cover_medium}"
        class="card-img-top object-fit-cover rounded-bottom m-3"
        alt="Immagine Playlist 2"
        style="height: 110px; width: 110px"
-     />
+     /></a>
      <div class="card-body">
-       <p class="card-text h6 text-light" style="font-size: 12px">
+     <a href="../../album.html?id=${data.id}" class="text-decoration-none"> <p class="card-text h6 text-light" style="font-size: 12px">
        ${data.title}
-       </p>
-       <p class="card-text text-light" style="font-size: 10px">
+       </p></a>
+       <a href="../../artista.html?id=${data.id}" class="text-decoration-none"><p class="card-text text-light" style="font-size: 10px">
        ${data.artist.name}
-       </p>
+       </p></a>
      </div>
    </div>
  </div>`
