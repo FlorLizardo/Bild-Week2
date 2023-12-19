@@ -170,7 +170,9 @@ function stampaCardArtisti(data) {
 	let cardCantanti = document.getElementById("cardArtisti");
 
 	let stampina = `
-   <div class="col-xl-2">
+  
+  <div class="col-xl-2">
+  <a href="../../artista.html?id=${data.id}" class="text-decoration-none">
    <div class="card bg-card-verticali text-white">
     <img
        src="${data.picture_medium}"
@@ -189,7 +191,9 @@ function stampaCardArtisti(data) {
        
     </div>
    </div>
- </div>`;
+   </a>
+ </div>
+ `;
 	cardCantanti.innerHTML += stampina;
 }
 

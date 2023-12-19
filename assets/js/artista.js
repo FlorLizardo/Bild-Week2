@@ -1,10 +1,29 @@
+const params = new URLSearchParams(location.search)
+const id = params.get('id');
+
+const secondUrl = "https://striveschool-api.herokuapp.com/api/deezer/artist/";
+
+
+// const getTrackList = () => {
+//  fetch(secondUrl + id)
+//    .then((response) => response.json())
+//    .then((data) => {
+//        console.log(data)
+//      tracklist(data)
+//      getSong(data)
+//    })
+//    .catch((error) => console.error("Error:", error));
+// };
+
+
+
 //function di prova
 async function artistiProva() {
-  const response = await fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/5695/");
+  const response = await fetch(secondUrl + id);
   const artist = await response.json();
   // console.log(artist);
 
-  const resp = await fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/5695/top?limit=50");
+  const resp = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${id}/top?limit=50`);
   const artTrackList = await resp.json();
   
   
