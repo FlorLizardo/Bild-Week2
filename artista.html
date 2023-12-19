@@ -48,7 +48,11 @@
                   class="text-white-50"
                 />
               </svg>
-              <a href="./homePage.html" class="text-decoration-none text-secondary">Home</a>
+              <a
+                href="./homePage.html"
+                class="text-decoration-none text-secondary"
+                >Home</a
+              >
             </div>
             <div class="col-12 d-inline text-white-50">
               <svg
@@ -105,7 +109,8 @@
               Crea playlist
             </div>
             <div class="col-12 d-inline text-white-50">
-              <svg
+              <!-- COS'è? Non serve, Cancelliamo?__
+                <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="18"
                 height="18"
@@ -118,7 +123,7 @@
                   d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"
                   class="text-white-50"
                 />
-              </svg>
+              </svg> -->
               Brani che ti piacciono
             </div>
             <div class="col-12 d-inline text-white-50">
@@ -153,7 +158,7 @@
           <!--pseudo nav-->
           <div class="row">
             <div class="col d-flex justify-content-between">
-              <div>
+              <div class="mt-4">
                 <!--freccineeeeeeee navigazione-->
                 <a
                   href="#"
@@ -161,25 +166,28 @@
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
+                    width="30"
+                    height="30"
                     fill="currentColor"
                     class="bi bi-caret-left"
-                    viewBox="0 0 20 20"
+                    viewBox="0 0 15 20"
                   >
                     <path
                       d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"
                     />
                   </svg>
                 </a>
-                <a href="#" class="bg-black rounded-circle">
+                <a
+                  href="#"
+                  class="bg-black rounded-circle text-decoration-none"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
+                    width="30"
+                    height="30"
                     fill="currentColor"
                     class="bi bi-caret-right"
-                    viewBox="0 0 20 20"
+                    viewBox="0 0 15 20"
                   >
                     <path
                       d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"
@@ -192,7 +200,7 @@
                 <!--dropdown menu-->
                 <div class="dropdown">
                   <button
-                    class="btn btn-dark dropdown-toggle rounded-pill"
+                    class="btn black text-light dropdown-toggle rounded-pill my-3"
                     type="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
@@ -202,7 +210,7 @@
                       width="40"
                       height="40"
                       class="rounded-circle object-fit-cover me-4"
-                    />Icaro
+                    />Icaro De Gattis
                   </button>
                   <ul class="dropdown-menu bg-dark">
                     <li>
@@ -222,15 +230,10 @@
             </div>
           </div>
 
-          <div
-            class="divCenterScroll overflow-y-scroll overflow-x-hidden"
-           
-          >
+          <div class="divCenterScroll overflow-y-scroll overflow-x-hidden">
             <!--contenitore scroll-->
             <!--JUMBOTRON-->
-            <div class="row" id="artistPage">
-            
-            </div>
+            <div class="row" id="artistPage"></div>
 
             <div class="row">
               <!--icons player-->
@@ -268,26 +271,15 @@
             <!--chiusura row player/ icone-->
 
             <div class="row">
-              <div class="col-xl-8" >
+              <div class="col-xl-8">
                 <h3 class="mt-4 ms-3">Popolari</h3>
-                <div class="row d-flex pt-2" id="popolari">
-                 
-                </div>
-
-               
+                <div class="row d-flex pt-2" id="popolari"></div>
               </div>
 
-              <div class="col-xl-4" id="favoriti">
-               
-              </div>
+              <div class="col-xl-4" id="favoriti"></div>
             </div>
 
-<div class="row" id="album">
-
-</div>
-
-
-
+            <div class="row" id="album"></div>
 
             <!--Artisti-->
           </div>
