@@ -48,7 +48,7 @@ const tracklist = (data) => {
    <p class="h6">ALBUM</p>
    <h1 class="display-4">${data.title}</h1>
    <p class="h6">
-   <img src="${data.artist.picture}" width="30px" height="30px" class="rounded-circle"> ${data.artist.name} - ${data.release_date} - ${data.nb_tracks} brani -
+   <img src="${data.artist.picture}" width="30px" height="30px" class="rounded-circle"> <a href="../../artista.html?id=${data.id}" class="text-decoration-none text-light">${data.artist.name}</a> - ${data.release_date} - ${data.nb_tracks} brani -
      ${duration}
    </p>
  </div>
@@ -79,7 +79,9 @@ const getSong = (data) => {
              <div class="col-xl-7">
                <div class="row">
                  <div class="col-12 h6 text-light text-capitalize">${data.tracks.data[i].title}</div>               
-                 <div class="col h6 text-secondary text-capitalize">${data.artist.name}</div>
+                 <div class="col h6 text-secondary text-capitalize">
+                ${data.artist.name}
+                 </div>
                </div>
              </div>
 
