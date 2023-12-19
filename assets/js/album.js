@@ -32,7 +32,7 @@ const tracklist = (data) => {
  }else {
   duration = `${hour} ore ${minutes} min ${seconds} sec`;
  }
-//  let duration = (hour === 0) ? `${minutes} min ${seconds} sec.` : `${hour} ore ${minutes} min ${seconds} sec`;
+
 
  let album = 
  `<div class="col-xl-3">
@@ -91,9 +91,6 @@ const getSong = (data) => {
 }
 
 
-
-
 window.onload = () => {
- //getJb();
  getTrackList();
 }

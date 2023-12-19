@@ -4,19 +4,6 @@ const id = params.get('id');
 const secondUrl = "https://striveschool-api.herokuapp.com/api/deezer/artist/";
 
 
-// const getTrackList = () => {
-//  fetch(secondUrl + id)
-//    .then((response) => response.json())
-//    .then((data) => {
-//        console.log(data)
-//      tracklist(data)
-//      getSong(data)
-//    })
-//    .catch((error) => console.error("Error:", error));
-// };
-
-
-
 //function di prova
 async function artistiProva() {
   const response = await fetch(secondUrl + id);
@@ -162,18 +149,11 @@ const favoriti = document.getElementById('favoriti');
 
 // function stampaAlbum() {
 //   let album = document.getElementById('album');
-
-
 // }
-
-
 
 
 window.onload = () => {
   artistiProva();
-  
-
-
 }
 
 
