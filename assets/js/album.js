@@ -78,8 +78,8 @@ const getSong = (data) => {
              </div>
              <div class="col-xl-7">
                <div class="row">
-                 <div class="col-12 h6 text-light text-capitalize">${data.tracks.data[i].title}</div>               
-                 <div class="col h6 text-secondary text-capitalize">
+                 <div class="col-xl-12 h6 text-light text-capitalize">${data.tracks.data[i].title}</div>               
+                 <div class="col-xl h6 text-secondary text-capitalize">
                 ${data.artist.name}
                  </div>
                </div>
