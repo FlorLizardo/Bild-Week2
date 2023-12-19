@@ -120,7 +120,7 @@ const favoriti = document.getElementById('favoriti');
 
     popolari.innerHTML += `
   <div class="col-xl-1">${index}</div>
-                  <div class="col-4 text-truncate" >
+                  <div class="col-xl-4 text-truncate" >
                     <img
                       src="${topFive[i].album.cover_medium}"
                       alt=""
@@ -132,10 +132,10 @@ const favoriti = document.getElementById('favoriti');
                     >
                   </div>
 
-                  <div class="col-3">
+                  <div class="col-xl-3">
                     <p>${topFive[i].rank}</p>
                   </div>
-                  <div class="col-4">
+                  <div class="col-xl-4">
                     <p>${duration}</p>
                   </div> 
                   `
