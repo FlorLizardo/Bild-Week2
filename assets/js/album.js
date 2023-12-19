@@ -95,7 +95,14 @@ const tracklist = (data) => {
  minutes = (minutes < 10) ? '0' + minutes : minutes;
  let seconds = totalSeconds % 60;
  seconds = (seconds < 10) ? '0' + seconds : seconds;
- let duration = (hour === 0) ? `${minutes} min ${seconds} sec.` : `${hour} ore ${minutes} min ${seconds} sec`;
+ if(hour === 0) {
+  duration = `${minutes} min ${seconds} sec.`;
+ }else if (hour === 1) {
+  duration = `${hour} ora ${minutes} min ${seconds} sec`;
+ }else {
+  duration = `${hour} ore ${minutes} min ${seconds} sec`;
+ }
+//  let duration = (hour === 0) ? `${minutes} min ${seconds} sec.` : `${hour} ore ${minutes} min ${seconds} sec`;
 
  let album = 
  `<div class="col-xl-3">
@@ -122,18 +129,25 @@ const tracklist = (data) => {
 const getSong = (data) => {
 
   for(let i = 0; i <= data.tracks.data.length; i++) {
+    //duration track
     const totalSeconds = data.tracks.data[i].duration;
     let minutes = Math.floor( totalSeconds / 60);
     let seconds = totalSeconds % 60;
     seconds = (seconds < 10) ? '0' + seconds : seconds;
     let duration = `${minutes}:${seconds}`
 
+    //numero track
+    let arrayIndex = data.tracks.data;
+    let indiceTrack = data.tracks.data[i]
+    let index = arrayIndex.indexOf(indiceTrack) + 1;
+
+// var indice = miArreglo.indexOf(elementoBuscado);
    //const nbTrack = 1;
    
    const rowTracks = document.getElementById('tracklist');
    let track = 
    `<div class="col-xl-1 text-secondary d-flex justify-content-end align-items-center">
-              
+              ${index}
              </div>
              <div class="col-xl-7">
                <div class="row">
