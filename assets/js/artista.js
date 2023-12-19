@@ -11,6 +11,7 @@ async function artistiProva() {
 
    jbArtist(artist, artTrackList);
   prova(artTrackList);
+  stampaTopFive();
   
 }
 
@@ -31,9 +32,10 @@ function prova(tracklist) {
   createTopFive(ordine, tracklist);
 }
 
-
+const topFive = [];
+console.log(topFive);
 function createTopFive(ordine, tracklist) {
-  let topFive = [];
+  
   for(let i = 0; i < 5; i++) {
     for(let j = 0; j < ordine.length; j++) {
       if(ordine[i] === tracklist.data[j].rank) {
@@ -95,37 +97,62 @@ const favoriti = document.getElementById('favoriti');
  function stampaTopFive() {
   const popolari = document.getElementById('popolari');
 
-  popolari.innerHTML += `
-  <div class="col-xl-1">1</div>
-                  <div class="col-4">
+  for (let i = 0; i <= topFive.length; i++) {
+  console.log(topFive);
+
+  //minuti
+  const totalSeconds = topFive[i].duration;
+  let minutes = Math.floor( totalSeconds / 60);
+  let seconds = totalSeconds % 60;
+  seconds = (seconds < 10) ? '0' + seconds : seconds;
+  let duration = `${minutes}:${seconds}`
+
+  //numero track
+  let arrayIndex = topFive;
+  let indiceTrack = topFive[i];
+  let index = arrayIndex.indexOf(indiceTrack) + 1;
+
+    popolari.innerHTML += `
+  <div class="col-xl-1">${index}</div>
+                  <div class="col-4 text-truncate" >
                     <img
-                      src="assets/img/photo_2023-12-14_09-32-24.jpg"
+                      src="${topFive[i].album.cover_medium}"
                       alt=""
                       width="40px"
                       height="40px"
                     />
-                    <a href="" class="text-decoration-none text-light"
-                      ></a
+                    <a href="" class="text-decoration-none text-light "
+                      >${topFive[i].title}</a
                     >
                   </div>
 
                   <div class="col-3">
-                    <p>276.576</p>
+                    <p>${topFive[i].rank}</p>
                   </div>
                   <div class="col-4">
-                    <p>3:17</p>
-                  </div> `
+                    <p>${duration}</p>
+                  </div> 
+                  `
 
- }  
-
-
-//  topFive.forEach(element => {
   
-//  });
+  };
+}
+
+
+//stampa card album
+
+// function stampaAlbum() {
+//   let album = document.getElementById('album');
+
+
+// }
+
+
+
 
 window.onload = () => {
   artistiProva();
-  stampaTopFive();
+  
 
 
 }
