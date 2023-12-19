@@ -87,7 +87,7 @@ function cardPlaylist(data) {
         />
         </div>
       <div class="d-flex align-items-center">
-        <p class="h6">${data.title}</p>
+      <a href="../../album.html?id=${data.id}" class="text-decoration-none"><p class="h6 text-light">${data.title}</p></a>
       </div>
     </div>`;
 	rowPlaylist.innerHTML += stampina;
@@ -172,21 +172,22 @@ function stampaCardArtisti(data) {
 	let stampina = `
    <div class="col-xl-2">
    <div class="card bg-card-verticali text-white">
-     <img
+    <img
        src="${data.picture_medium}"
        class="card-img-top object-fit-cover rounded-circle m-3"
        alt="Immagine Playlist 2"
        style="height: 110px; width: 110px"
      />
-     <div class="card-body pt-0">
-     <p class="card-text text-light h6" style="font-size: 12px">
+    
+    <div class="card-body pt-0">
+      <p class="card-text text-light h6" style="font-size: 12px">
        ${data.name}
        </p>
        <p class="card-text text-light" style="font-size: 10px">
        Artista
        </p>
        
-     </div>
+    </div>
    </div>
  </div>`;
 	cardCantanti.innerHTML += stampina;
