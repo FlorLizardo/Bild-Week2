@@ -60,10 +60,10 @@ function jbArtist(artist, artTrackList) {
 const favoriti = document.getElementById('favoriti');
  
   header.innerHTML = `
-  <div class="row">
+  <div class="row" style="background-image: url('${artist.picture_xl}')">
   <div class="jumbotron jumbotron-fluid">
     <div class="container" id="jumbotron">
-      <div class="mt-5 pt-5">
+      <div class="mt-5 mb-3 pt-5">
         <small>Artista verificato</small>
         <h1 class="display-1 fw-bold mb-4">${artist.name}</h1>
         <small>${artist.nb_fan} ascoltatori mensili</small>
@@ -80,13 +80,13 @@ const favoriti = document.getElementById('favoriti');
   favoriti.innerHTML = `
   <div class="row">
   <h3>Brani che ti piacciono</h3>
-  <div class="col-12 d-flex">
+  <div class="col-xl-12 d-flex">
     <div>
-      <img src="assets/img/edoardo.jpg" alt="" width="50" height="50" class="rounded-circle">
+      <img src="${artist.picture_small}" alt="" width="50" height="50" class="rounded-circle">
     </div>
     <div>
       <h6>Hai messo Mi piace a 11 brani</h6>
-    <small>Di </small>
+    <small>Di ${artist.name} </small>
     </div>
     
   </div>
