@@ -86,14 +86,21 @@ const getTrackList = () => {
 };
 
 
-
 const tracklist = (data) => {
  const rowAlbum = document.getElementById('albumtron');
+
+ const totalSeconds = data.duration;
+ let hour = Math.floor(totalSeconds / 3600);
+ let minutes = Math.floor(( totalSeconds / 60) % 60);
+ minutes = (minutes < 10) ? '0' + minutes : minutes;
+ let seconds = totalSeconds % 60;
+ seconds = (seconds < 10) ? '0' + seconds : seconds;
+ let duration = (hour === 0) ? `${minutes} min ${seconds} sec.` : `${hour} ore ${minutes} min ${seconds} sec`;
 
  let album = 
  `<div class="col-xl-3">
  <img
-   src="${data.cover}"
+   src="${data.cover_medium}"
    width="190"
    height="190"
    class="object-fit-cover ms-0 p-2"
@@ -104,8 +111,8 @@ const tracklist = (data) => {
    <p class="h6">ALBUM</p>
    <h1 class="display-4">${data.title}</h1>
    <p class="h6">
-   <img src="${data.contributors[0].picture_small}" width="30px" height="30px" class="rounded-circle"> ${data.artist.name} - ${data.release_date} - ${data.nb_tracks} brani -
-     ${data.duration}
+   <img src="${data.artist.picture}" width="30px" height="30px" class="rounded-circle"> ${data.artist.name} - ${data.release_date} - ${data.nb_tracks} brani -
+     ${duration}
    </p>
  </div>
 </div>` 
@@ -115,6 +122,12 @@ const tracklist = (data) => {
 const getSong = (data) => {
 
   for(let i = 0; i <= data.tracks.data.length; i++) {
+    const totalSeconds = data.tracks.data[i].duration;
+    let minutes = Math.floor( totalSeconds / 60);
+    let seconds = totalSeconds % 60;
+    seconds = (seconds < 10) ? '0' + seconds : seconds;
+    let duration = `${minutes}:${seconds}`
+
    //const nbTrack = 1;
    
    const rowTracks = document.getElementById('tracklist');
@@ -130,7 +143,7 @@ const getSong = (data) => {
              </div>
 
              <div class="col-xl-3 text-secondary d-flex align-items-center">${data.tracks.data[i].rank}</div>
-             <div class="col-xl-1 text-secondary d-flex align-items-center">${data.tracks.data[i].duration}</div>`
+             <div class="col-xl-1 text-secondary d-flex align-items-center">${duration}</div>`
 
  
  rowTracks.innerHTML += track;

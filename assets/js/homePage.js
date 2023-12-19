@@ -14,7 +14,7 @@ function displayJumbotron(data) {
     <div class="row bg-jumbotron py-3 ps-5" >
       <div class="col-xl-2 d-flex align-items-center justify-content-end">
         <img
-          src="${data.cover}"
+          src="${data.cover_medium}"
           width="170"
           height="170"
          
@@ -78,19 +78,18 @@ function cardPlaylist(data) {
 	let rowPlaylist = document.getElementById("cardOblunghe");
 
 	let stampina = `
-  <div class="col-xl-12 d-flex column-gap-2 my-1 bg-card-orizz p-0 playlistCol">
-  <div class="p-0">
-            <img
-            src="${data.cover_small}"
+    <div class="col-xl-12 d-flex column-gap-2 my-1 bg-card-orizz p-0 playlistCol">
+      <div class="p-0">
+        <img src="${data.cover_medium}" 
             width="70"
             height="70"
             class="object-fit-cover"
-            />
-            </div>
-            <div class="d-flex align-items-center">
-            <p class="h6">${data.title}</p>
-            </div>
-            </div>`;
+        />
+        </div>
+      <div class="d-flex align-items-center">
+        <p class="h6">${data.title}</p>
+      </div>
+    </div>`;
 	rowPlaylist.innerHTML += stampina;
 }
 
