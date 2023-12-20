@@ -1,4 +1,4 @@
-const test = "https://striveschool-api.herokuapp.com/api/deezer/album/62819462";
+const test = "https://striveschool-api.herokuapp.com/api/deezer/album/401346";
 
 const getDisplayJb = () => {
   fetch(test)

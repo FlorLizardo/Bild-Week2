@@ -2,10 +2,6 @@
   color: #fff;
 }
 
-
-
-
-
 .font-size-list {
   font-size: 0.9rem;
 }
@@ -57,4 +53,14 @@
     rgba(0, 0, 0, 1) 18%,
     rgba(53, 53, 53, 1) 70%
   );
+}
+
+.padding-row {
+  padding-bottom: 9rem;
+}
+
+.bg-repeat {
+  background-size: auto;
+  background-blend-mode: darken;
+  background-position: center;
 }

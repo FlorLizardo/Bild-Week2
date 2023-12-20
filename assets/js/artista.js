@@ -14,7 +14,7 @@ async function artistiProva() {
   );
   const artTrackList = await resp.json();
 
-  jbArtist(artist, artTrackList);
+  jbArtist(artist);
   prova(artTrackList);
   stampaTopFive();
 }
@@ -47,12 +47,15 @@ function createTopFive(ordine, tracklist) {
 }
 
 //funzione header OK!!!!!!
-function jbArtist(artist, artTrackList) {
+function jbArtist(artist) {
   const header = document.getElementById("artistPage");
   const favoriti = document.getElementById("favoriti");
+  const containerBg = document.getElementById('container-bg');
+  containerBg.style.backgroundImage = `url('${artist.picture_xl}')`;
+  containerBg.classList.add('bg-repeat')
 
   header.innerHTML = `
-  <div class="row" style="background-image: url('${artist.picture_xl}')">
+  <div class="row" >
   <div class="jumbotron jumbotron-fluid">
     <div class="container" id="jumbotron">
       <div class="mt-5 mb-3 pt-5">
@@ -63,24 +66,19 @@ function jbArtist(artist, artTrackList) {
     </div>
   </div>
 </div>
-
-
-
-  
   `;
 
   favoriti.innerHTML = `
-  <div class="row">
-  <h3>Brani che ti piacciono</h3>
+  <div class="row mt-4">
+  <h4>Brani che ti piacciono</h4>
   <div class="col-xl-12 d-flex">
     <div class="me-2">
       <img src="${artist.picture_small}" alt="" width="50" height="50" class="rounded-circle">
     </div>
     <div>
       <h6>Hai messo Mi piace a 11 brani</h6>
-    <small>Di ${artist.name} </small>
+    <small class="text-white-50">Di ${artist.name} </small>
     </div>
-    
   </div>
 </div>
   `;
@@ -107,26 +105,26 @@ function stampaTopFive() {
     let index = arrayIndex.indexOf(indiceTrack) + 1;
 
     popolari.innerHTML += `
-  <div class="col-xl-1">${index}</div>
-                  <div class="col-xl-4 text-truncate" >
-                    <img
-                      src="${topFive[i].album.cover_medium}"
-                      alt=""
-                      width="40px"
-                      height="40px"
-                    />
-                    <a href="" class="text-decoration-none text-light "
-                      >${topFive[i].title}</a
-                    >
-                  </div>
+    <div class="col-xl-1 pt-2 d-flex justify-content-end align-items-center">${index}</div>
+      <div class="col-xl-5 text-truncate pt-2">
+        <img
+          src="${topFive[i].album.cover_medium}"
+          alt="cover album"
+          width="40px"
+          height="40px"
+        />
+        <a href="" class="text-decoration-none text-light">
+          ${topFive[i].title}
+        </a>
+      </div>
 
-                  <div class="col-xl-3">
-                    <p>${topFive[i].rank}</p>
-                  </div>
-                  <div class="col-xl-4">
-                    <p>${duration}</p>
-                  </div> 
-                  `;
+    <div class="col-xl-3 pt-2 d-flex justify-content-end">
+      <p class="text-white-50">${topFive[i].rank}</p>
+    </div>
+    <div class="col-xl-3 pt-2 d-flex justify-content-center">
+      <p class="text-white-50">${duration}</p>
+    </div> 
+    `;
   }
 }
 
