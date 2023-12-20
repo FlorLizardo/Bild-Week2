@@ -17,7 +17,10 @@ const getTrackList = () => {
 
 
 const tracklist = (data) => {
+  const bg_jumbotron = document.getElementById('bg-album-jb');
  const rowAlbum = document.getElementById('albumtron');
+ bg_jumbotron.style.backgroundImage = `url('${data.cover_xl}')`;
+ bg_jumbotron.classList.add('bg_jumbotron')
 
  const totalSeconds = data.duration;
  let hour = Math.floor(totalSeconds / 3600);
@@ -73,10 +76,10 @@ const getSong = (data) => {
    
    const rowTracks = document.getElementById('tracklist');
    let track = 
-   `<div class="col-xl-1 text-secondary d-flex justify-content-end align-items-center">
+   `<div class="col-xl-1 text-secondary d-flex justify-content-end align-items-center pt-3">
               ${index}
              </div>
-             <div class="col-xl-7">
+             <div class="col-xl-7 pt-3">
                <div class="row">
                  <div class="col-xl-12 h6 text-light text-capitalize">${data.tracks.data[i].title}</div>               
                  <div class="col-xl h6 text-secondary text-capitalize">
@@ -85,8 +88,8 @@ const getSong = (data) => {
                </div>
              </div>
 
-             <div class="col-xl-3 text-secondary d-flex align-items-center">${data.tracks.data[i].rank}</div>
-             <div class="col-xl-1 text-secondary d-flex align-items-center">${duration}</div>`
+             <div class="col-xl-3 text-secondary d-flex align-items-center pt-3">${data.tracks.data[i].rank}</div>
+             <div class="col-xl-1 text-secondary d-flex align-items-center pt-3">${duration}</div>`
              
  rowTracks.innerHTML += track;
   }

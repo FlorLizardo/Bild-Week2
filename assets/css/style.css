@@ -64,3 +64,12 @@
   background-blend-mode: darken;
   background-position: center;
 }
+
+/* .bg_jumbotron {
+  
+} */
+
+.sfocatura {
+  backdrop-filter: blur(10px);
+  z-index: -1;
+}
