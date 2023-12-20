@@ -1,8 +1,7 @@
-const params = new URLSearchParams(location.search)
-const id = params.get('id');
+const params = new URLSearchParams(location.search);
+const id = params.get("id");
 
 const secondUrl = "https://striveschool-api.herokuapp.com/api/deezer/artist/";
-
 
 //function di prova
 async function artistiProva() {
@@ -10,30 +9,25 @@ async function artistiProva() {
   const artist = await response.json();
   // console.log(artist);
 
-  const resp = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${id}/top?limit=50`);
+  const resp = await fetch(
+    `https://striveschool-api.herokuapp.com/api/deezer/artist/${id}/top?limit=50`
+  );
   const artTrackList = await resp.json();
-  
-  
 
-   jbArtist(artist, artTrackList);
+  jbArtist(artist, artTrackList);
   prova(artTrackList);
   stampaTopFive();
-  
 }
-
-
 
 //funzione numero tracks
 function prova(tracklist) {
-  
   let array = [];
   let ordine = [];
   for (let i = 0; i < tracklist.data.length; i++) {
     let tracks = tracklist.data[i].rank;
     array.push(tracks);
-      
-      ordine = array.sort();
-      
+
+    ordine = array.sort();
   }
   createTopFive(ordine, tracklist);
 }
@@ -41,10 +35,9 @@ function prova(tracklist) {
 const topFive = [];
 console.log(topFive);
 function createTopFive(ordine, tracklist) {
-  
-  for(let i = 0; i < 5; i++) {
-    for(let j = 0; j < ordine.length; j++) {
-      if(ordine[i] === tracklist.data[j].rank) {
+  for (let i = 0; i < 5; i++) {
+    for (let j = 0; j < ordine.length; j++) {
+      if (ordine[i] === tracklist.data[j].rank) {
         topFive.push(tracklist.data[j]);
       }
     }
@@ -53,12 +46,11 @@ function createTopFive(ordine, tracklist) {
   return topFive;
 }
 
-
 //funzione header OK!!!!!!
 function jbArtist(artist, artTrackList) {
-  const header = document.getElementById('artistPage');
-const favoriti = document.getElementById('favoriti');
- 
+  const header = document.getElementById("artistPage");
+  const favoriti = document.getElementById("favoriti");
+
   header.innerHTML = `
   <div class="row" style="background-image: url('${artist.picture_xl}')">
   <div class="jumbotron jumbotron-fluid">
@@ -75,13 +67,13 @@ const favoriti = document.getElementById('favoriti');
 
 
   
-  `
+  `;
 
   favoriti.innerHTML = `
   <div class="row">
   <h3>Brani che ti piacciono</h3>
   <div class="col-xl-12 d-flex">
-    <div>
+    <div class="me-2">
       <img src="${artist.picture_small}" alt="" width="50" height="50" class="rounded-circle">
     </div>
     <div>
@@ -91,32 +83,28 @@ const favoriti = document.getElementById('favoriti');
     
   </div>
 </div>
-  `
-  
-  }
+  `;
+}
 
+//funzione stampa top5
 
-
-
- //funzione stampa top5
-
- function stampaTopFive() {
-  const popolari = document.getElementById('popolari');
+function stampaTopFive() {
+  const popolari = document.getElementById("popolari");
 
   for (let i = 0; i <= topFive.length; i++) {
-  console.log(topFive);
+    console.log(topFive);
 
-  //minuti
-  const totalSeconds = topFive[i].duration;
-  let minutes = Math.floor( totalSeconds / 60);
-  let seconds = totalSeconds % 60;
-  seconds = (seconds < 10) ? '0' + seconds : seconds;
-  let duration = `${minutes}:${seconds}`
+    //minuti
+    const totalSeconds = topFive[i].duration;
+    let minutes = Math.floor(totalSeconds / 60);
+    let seconds = totalSeconds % 60;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+    let duration = `${minutes}:${seconds}`;
 
-  //numero track
-  let arrayIndex = topFive;
-  let indiceTrack = topFive[i];
-  let index = arrayIndex.indexOf(indiceTrack) + 1;
+    //numero track
+    let arrayIndex = topFive;
+    let indiceTrack = topFive[i];
+    let index = arrayIndex.indexOf(indiceTrack) + 1;
 
     popolari.innerHTML += `
   <div class="col-xl-1">${index}</div>
@@ -138,12 +126,9 @@ const favoriti = document.getElementById('favoriti');
                   <div class="col-xl-4">
                     <p>${duration}</p>
                   </div> 
-                  `
-
-  
-  };
+                  `;
+  }
 }
-
 
 //stampa card album
 
@@ -151,12 +136,6 @@ const favoriti = document.getElementById('favoriti');
 //   let album = document.getElementById('album');
 // }
 
-
 window.onload = () => {
   artistiProva();
-}
-
-
-
-
-
+};
