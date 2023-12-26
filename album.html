@@ -105,14 +105,17 @@
 							</svg>
 							Crea playlist
 						</div>
-						<div class="col-xl-12 d-inline text-white-50">
+
+
+						<div class="col-xl-12 d-inline text-white-50 d-flex">
+              <div class="anchorIcons bg-violet d-flex justify-content-center align-items-center me-1">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
-								width="18"
-								height="18"
+								width="14"
+								height="14"
 								fill="currentColor"
 								class="bi bi-heart-fill"
-								viewBox="0 0 16 16"
+								viewBox="0 0 16 16" 
 							>
 								<path
 									fill-rule="evenodd"
@@ -120,13 +123,15 @@
 									class="text-white-50"
 								/>
 							</svg>
+            </div>
 							Brani che ti piacciono
 						</div>
-						<div class="col-xl-12 d-inline text-white-50">
+						<div class="col-xl-12 d-flex text-white-50">
+              <div class="anchorIcons bg-green d-flex justify-content-center align-items-center me-1">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
-								width="18"
-								height="18"
+								width="14"
+								height="14"
 								fill="currentColor"
 								class="bi bi-bookmark-fill"
 								viewBox="0 0 16 16"
@@ -136,8 +141,11 @@
 									class="text-white-50"
 								/>
 							</svg>
+            </div>
 							I tuoi episodi
 						</div>
+
+
 					</div>
 
 					<!--PLAYLISTTTTTT-->
@@ -151,78 +159,84 @@
 					<!--pseudo nav-->
 					<div class="divCenterScroll overflow-y-scroll overflow-x-hidden">
 						<div id="bg-album-jb">
-              <div class="sfocatura">
-							<div class="row">
-								<div class="col d-flex justify-content-between">
-									<div class="mt-4">
-										<!--freccineeeeeeee navigazione-->
-										<a href="#" class="bg-black rounded-circle text-decoration-none">
-											<svg
-												xmlns="http://www.w3.org/2000/svg"
-												width="30"
-												height="30"
-												fill="currentColor"
-												class="bi bi-caret-left"
-												viewBox="0 0 15 20"
-											>
-												<path
-													d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"
-												/>
-											</svg>
-										</a>
-										<a href="#" class="bg-black rounded-circle">
-											<svg
-												xmlns="http://www.w3.org/2000/svg"
-												width="30"
-												height="30"
-												fill="currentColor"
-												class="bi bi-caret-right"
-												viewBox="0 0 15 20"
-											>
-												<path
-													d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"
-												/>
-											</svg>
-										</a>
-									</div>
+							<div class="sfocatura">
+								<div class="row">
+									<div class="col d-flex justify-content-between">
+										<div class="mt-4 d-flex ms-1">
+											<!--freccineeeeeeee navigazione-->
+											<a
+									href="#"
+									class="bg-black rounded-circle d-flex justify-content-center align-items-center text-decoration-none"
+									style="width: 2rem; height: 2rem"
+								>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										height="20"
+										width="20"
+										viewBox="0 0 320 512"
+										fill="white"
+									>
+										<path
+											d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"
+										/>
+									</svg>
+								</a>
+								<a
+									href="#"
+									class="bg-black rounded-circle d-flex justify-content-center align-items-center text-decoration-none ms-3"
+									style="width: 2rem; height: 2rem"
+								>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										height="20"
+										width="20"
+										viewBox="0 0 320 512"
+										fill="white"
+									>
+										<path
+											d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"
+										/>
+									</svg>
+								</a>
+										</div>
 
-									<div>
-										<!--dropdown menu-->
-										<div class="dropdown">
-											<button
-												class="btn black text-light dropdown-toggle rounded-pill my-3"
-												type="button"
-												data-bs-toggle="dropdown"
-												aria-expanded="false"
-											>
-												<img
-													src="./assets/img/photo_2023-12-14_09-32-24.jpg"
-													width="30"
-													height="30"
-													class="rounded-circle object-fit-cover me-4"
-												/>Icaro De Gattis
-											</button>
-											<ul class="dropdown-menu bg-dark">
-												<li>
-													<a class="dropdown-item text-light" href="#">Account</a>
-												</li>
-												<li>
-													<a class="dropdown-item text-light" href="#">Profilo</a>
-												</li>
-												<li>
-													<a class="dropdown-item text-light" href="#">Impostazioni</a>
-												</li>
-											</ul>
+										<div>
+											<!--dropdown menu-->
+											<div class="dropdown">
+												<button
+													class="font-btn btn black text-light dropdown-toggle rounded-pill my-3 p-0 pe-2"
+													type="button"
+													data-bs-toggle="dropdown"
+													aria-expanded="false"
+												>
+													<img
+														src="./assets/img/photo_2023-12-14_09-32-24.jpg"
+														width="25"
+														height="25"
+														class="rounded-circle object-fit-cover me-2 p-0"
+													/>Icaro De Gattis
+												</button>
+												<ul class="dropdown-menu dropdown-menu-dark bg-black">
+													<li>
+														<a class="dropdown-item text-light" href="#">Account</a>
+													</li>
+													<li>
+														<a class="dropdown-item text-light" href="#">Profilo</a>
+													</li>
+													<li>
+														<a class="dropdown-item text-light" href="#">Impostazioni</a>
+													</li>
+												</ul>
+											</div>
 										</div>
 									</div>
 								</div>
+
+								<!--contenitore scroll-->
+								<!--ALBUM INFO-->
+
+								<div class="row" id="albumtron"></div>
 							</div>
-
-							<!--contenitore scroll-->
-							<!--ALBUM INFO-->
-
-							<div class="row" id="albumtron"></div>
-            </div>
 						</div>
 
 						<!--PLAYER-->
@@ -342,13 +356,12 @@
 				<!-- colonna DX chisura pag e amici -->
 				<div class="col-xl-2 bg-black">
 					<!-- Tastini Pagina -->
-					<div class="row">
-						<div class="col-xl-6 d-inline"></div>
-						<div class="col-xl-6 d-inline">
+					<div class="row pt-1">
+						<div class="col d-flex justify-content-end p-1 gap-1">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
-								width="16"
-								height="16"
+								width="11"
+								height="11"
 								fill="currentColor"
 								class="bi bi-dash-lg"
 								viewBox="0 0 16 16"
@@ -360,8 +373,8 @@
 							</svg>
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
-								width="16"
-								height="16"
+								width="11"
+								height="11"
 								fill="currentColor"
 								class="bi bi-window-stack mx-2"
 								viewBox="0 0 16 16"
@@ -375,8 +388,8 @@
 							</svg>
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
-								width="16"
-								height="16"
+								width="11"
+								height="11"
 								fill="currentColor"
 								class="bi bi-x-lg"
 								viewBox="0 0 16 16"
@@ -390,15 +403,15 @@
 
 					<!-- Attività amici / icone -->
 					<div class="row">
-						<div class="col-xl-7 px-0">
+						<div class="col-xl-7 px-0 pb-2">
 							<p class="fw-bold fs-6 text-nowrap mx-3">Attività A-Mici</p>
 						</div>
-						<div class="col-xl-5 d-inline">
+						<div class="col-xl-5 d-flex justify-content-end pt-1 gap-1">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
-								width="18"
-								height="18"
-								fill="currentColor"
+								width="16"
+								height="16"
+								fill="gray"
 								class="bi bi-person-plus me-1"
 								viewBox="0 0 16 16"
 							>
@@ -412,9 +425,9 @@
 							</svg>
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
-								width="18"
-								height="18"
-								fill="currentColor"
+								width="16"
+								height="16"
+								fill="gray"
 								class="bi bi-x-lg"
 								viewBox="0 0 16 16"
 							>

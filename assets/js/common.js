@@ -39,30 +39,34 @@ const amici = [
 function popolaAmici() {
 	amici.forEach((amici) => {
 		let row = document.createElement("div");
-		row.classList.add("row", "ms-2");
-		row.style.lineHeight = "8px";
+		row.classList.add("row", 'ps-2');
+		// row.style.lineHeight = ".3";
 
 		let col1 = document.createElement("div");
-		col1.classList.add("col-xl-3", "ps-0");
+		col1.classList.add("col-xl-3",'p-0', 'my-2', 'ps-2');
 		let avatarAmico = document.createElement("img");
 		avatarAmico.classList.add("object-fit-cover", "rounded-circle");
-		avatarAmico.style.height = "50px";
-		avatarAmico.style.width = "50px";
+		avatarAmico.style.height = "2.7rem";
+		avatarAmico.style.width = "2.7rem";
 		avatarAmico.src = amici.img;
 
 		let col2 = document.createElement("div");
-		col2.classList.add("col-xl-6", "my-3");
+		col2.classList.add("col-xl-6", "my-3", "amici");
 		let nomeAmico = document.createElement("p");
-        nomeAmico.classList.add('text-secondary')
+    nomeAmico.classList.add('text-secondary')
 		nomeAmico.innerText = amici.nome;
 		let canzone = document.createElement("p");
-		canzone.style.fontSize = "12px";
-        canzone.classList.add('text-secondary')
+    canzone.classList.add('text-secondary', 'font-p', 'mb-2')
 		canzone.innerText = amici.canzone;
-		let cd = document.createElement("p");
-		cd.style.fontSize = "12px";
-        cd.classList.add('text-secondary')
-		cd.innerText = amici.album;
+		let cd = document.createElement("div");
+    cd.classList.add('d-flex', 'gap-1', 'font-p');	
+		cd.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="gray" class="bi bi-music-note-beamed" viewBox="0 0 16 16">
+		<path d="M6 13c0 1.105-1.12 2-2.5 2S1 14.105 1 13c0-1.104 1.12-2 2.5-2s2.5.896 2.5 2m9-2c0 1.105-1.12 2-2.5 2s-2.5-.895-2.5-2 1.12-2 2.5-2 2.5.895 2.5 2"/>
+		<path fill-rule="evenodd" d="M14 11V2h1v9zM6 3v10H5V3z"/>
+		<path d="M5 2.905a1 1 0 0 1 .9-.995l8-.8a1 1 0 0 1 1.1.995V3L5 4z"/>
+	</svg> 
+		<p class="text-secondary pt-1">${amici.album}</p>
+	`
 
 		let col3 = document.createElement("div");
 		col3.classList.add("col-xl-3", "pt-3");

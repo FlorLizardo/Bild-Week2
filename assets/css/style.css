@@ -10,6 +10,19 @@
   color: #1ed760 !important;
 }
 
+.anchorIcons {
+  width: 1.2rem; 
+  height: 1.2rem;
+}
+
+.bg-violet {
+  background-color: blueviolet;
+}
+
+.bg-green {
+  background-color: #22974b;
+}
+
 .bg-centrale {
   background-color: #121212;
 }
@@ -25,6 +38,23 @@
 .playlistScroll {
   height: 71.6vh;
 }
+
+.playlistScroll::-webkit-scrollbar, .divCenterScroll::-webkit-scrollbar {
+  width: 0.7rem;
+ }
+ 
+ .playlistScroll::-webkit-scrollbar-track, .divCenterScroll::-webkit-scrollbar-track {
+  background: transparent;
+ }
+ 
+ .playlistScroll:-webkit-scrollbar-thumb, .divCenterScroll:-webkit-scrollbar-thumb {
+  background-color: transparent;
+ }
+ 
+ .playlistScroll::-webkit-scrollbar-thumb:hover, .divCenterScroll::-webkit-scrollbar-thumb:hover{
+  background-color: #2c2c2c;
+ }
+
 
 .bg-card-orizz {
   background-color: #2c2c2c;
@@ -65,11 +95,16 @@
   background-position: center;
 }
 
-/* .bg_jumbotron {
-  
-} */
 
 .sfocatura {
   backdrop-filter: blur(10px);
   z-index: -1;
+}
+
+.amici {
+  line-height: .1;
+}
+
+.font-p {
+  font-size: 10px;
 }
