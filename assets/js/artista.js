@@ -55,10 +55,10 @@ function jbArtist(artist) {
   containerBg.classList.add('bg-repeat')
 
   header.innerHTML = `
-  <div class="row" >
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container" id="jumbotron">
-      <div class="mt-5 mb-3 pt-5">
+  <div class="row px-0" >
+  <div class="jumbotron jumbotron-fluid pe-0">
+    <div class="container pe-0" id="jumbotron">
+      <div class="mt-5 mb-3 pt-5 bg-opacity ps-3">
         <small>Artista verificato</small>
         <h1 class="display-1 fw-bold mb-4">${artist.name}</h1>
         <small>${artist.nb_fan} ascoltatori mensili</small>

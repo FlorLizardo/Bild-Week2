@@ -36,6 +36,8 @@ const tracklist = (data) => {
   duration = `${hour} ore ${minutes} min ${seconds} sec`;
  }
 
+ let date = data.release_date;
+ let year = (new Date(date)).getFullYear();
 
  let album = 
  `<div class="col-xl-3">
@@ -51,7 +53,7 @@ const tracklist = (data) => {
    <p class="h6">ALBUM</p>
    <h1 class="display-4">${data.title}</h1>
    <p class="h6">
-   <img src="${data.artist.picture}" width="30px" height="30px" class="rounded-circle"> <a href="../../artista.html?id=${data.id}" class="text-decoration-none text-light">${data.artist.name}</a> - ${data.release_date} - ${data.nb_tracks} brani -
+   <img src="${data.artist.picture}" width="30px" height="30px" class="rounded-circle"> <a href="../../artista.html?id=${data.id}" class="text-decoration-none text-light">${data.artist.name}</a> - ${year} - ${data.nb_tracks} brani -
      ${duration}
    </p>
  </div>

@@ -108,3 +108,30 @@
 .font-p {
   font-size: 10px;
 }
+
+.input-search::placeholder {
+  color: gray;
+}
+
+.input-search {
+  outline: none;
+}
+
+.form-search {
+  width: 20rem;
+}
+
+.form-search:hover {
+  border: 1px solid rgb(60, 59, 59) !important;
+}
+
+.anchor-hover:hover .card {
+  transform: scale(1.1) !important;
+  transition: transform .5s ease;
+}
+
+.bg-opacity {
+  background-color: #828282;
+  opacity: .5;
+  width: 100%;
+}

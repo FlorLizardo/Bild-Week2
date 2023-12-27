@@ -22,8 +22,8 @@ function displayJumbotron(data) {
       </div>
       <div class="col-xl-9">
         <div>
-          <p class="h6">ALBUM</p>
-          <a href="../../album.html?id=${data.id}" class="text-decoration-none"><h1 class="display-4 text-light fw-bold">${data.title}</h1></a>
+          <small>ALBUM</small>
+          <a href="../../album.html?id=${data.id}" class="text-decoration-none"><h1 class="display-5 text-light fw-bold">${data.title}</h1></a>
           <a href="../../artista.html?id=${data.contributors[0].id}" class="text-decoration-none"><p class="h6 text-light">${data.artist.name}</p></a>
           <p class="h6">Ascolta il nuovo singolo di ${data.artist.name}</p>
         </div>
@@ -61,9 +61,9 @@ const cardOrizzontali = [
   "363906907",
   "510894151",
   "52845302",
-  "317985097",
-  "303572557",
-  "211834222",
+  "12761698",
+  "226383",
+  "304170",
 ];
 
 function fetchCardOrizzontali() {
@@ -97,18 +97,18 @@ function cardPlaylist(data) {
 
 /*CARDS ALTINE */
 const cardVerticali = [
-  "363906907",
+  "15490684",
   "510894151",
-  "52845302",
-  "317985097",
-  "52845302",
-  "52845302",
-  "52845302",
-  "317985097",
-  "52845302",
-  "52845302",
-  "317985097",
-  "52845302",
+  "1262014",
+  "80119962",
+  "109443",
+  "275045842",
+  "102819",
+  "121794132",
+  "7040437",
+  "108564",
+  "72819",
+  "235076292",
 ];
 
 function fetchCardVerticali() {
@@ -136,7 +136,7 @@ function stampaCardVerticali(data) {
      <a href="../../album.html?id=${data.id}" class="text-decoration-none"> <p class="card-text h6 text-light pb-1 text-truncate" style="font-size: 12px">
        ${data.title}
        </p></a>
-       <a href="../../artista.html?id=${data.id}" class="text-decoration-none"><p class="card-text text-light" style="font-size: 10px">
+       <a href="../../artista.html?id=${data.contributors[0].id}" class="text-decoration-none"><p class="card-text text-light" style="font-size: 10px">
        ${data.artist.name}
        </p></a>
      </div>
@@ -147,18 +147,18 @@ function stampaCardVerticali(data) {
 
 /*CARDS ARTISTI */
 const cardArtisti = [
+  "293585",
+  "483",
+  "14585",
+  "3968561",
+  "65682",
+  "1182",
   "5695",
   "4331",
-  "14585",
+  "75491",
   "470538",
-  "65682",
-  "7219246",
-  "5695",
-  "4331",
-  "14585",
-  "470538",
-  "65682",
-  "7219246",
+  "892",
+  "75798",
 ];
 
 function fetchCardArtisti() {
