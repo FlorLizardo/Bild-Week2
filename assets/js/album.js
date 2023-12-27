@@ -51,7 +51,7 @@ const tracklist = (data) => {
     </div>
     <div class="px-3 pt-5">
       <p class="h6">ALBUM</p>
-      <h1 class="display-5 fw-bold">${data.title}</h1>
+      <h1 class="display-5 fw-bold text-truncate" style="width:30rem;">${data.title}</h1>
       <div class="h6 d-flex">
         <img src="${data.artist.picture}" width="30px" height="30px" class="rounded-circle me-2"> 
         <a href="../../artista.html?id=${data.contributors[0].id}" class="text-decoration-none text-light">${data.artist.name}</a> 
