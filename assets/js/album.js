@@ -40,24 +40,26 @@ const tracklist = (data) => {
  let year = (new Date(date)).getFullYear();
 
  let album = 
- `<div class="col-xl-3">
- <img
-   src="${data.cover_medium}"
-   width="190"
-   height="190"
-   class="object-fit-cover ms-0 p-2"
- />
-</div>
-<div class="col-xl-9 px-3">
- <div>
-   <p class="h6">ALBUM</p>
-   <h1 class="display-4">${data.title}</h1>
-   <p class="h6">
-   <img src="${data.artist.picture}" width="30px" height="30px" class="rounded-circle"> <a href="../../artista.html?id=${data.id}" class="text-decoration-none text-light">${data.artist.name}</a> - ${year} - ${data.nb_tracks} brani -
-     ${duration}
-   </p>
- </div>
-</div>` 
+ `<div class="col-12 album-jb bg-opacity d-flex">
+    <div>
+      <img
+      src="${data.cover_medium}"
+      width="190"
+      height="190"
+      class="object-fit-cover ms-0 p-2"
+      />
+    </div>
+    <div class="px-3 pt-5">
+      <p class="h6">ALBUM</p>
+      <h1 class="display-5 fw-bold">${data.title}</h1>
+      <div class="h6 d-flex">
+        <img src="${data.artist.picture}" width="30px" height="30px" class="rounded-circle me-2"> 
+        <a href="../../artista.html?id=${data.contributors[0].id}" class="text-decoration-none text-light">${data.artist.name}</a> 
+        <p> - ${year} - ${data.nb_tracks} brani,<span class="text-secondary"> ${duration}</span>
+        </p>
+      </div>
+    </div>
+  </div>` 
  rowAlbum.innerHTML = album;
 }
 
