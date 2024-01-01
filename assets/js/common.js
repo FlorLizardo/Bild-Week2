@@ -182,6 +182,12 @@ function playerDefault(data) {
 		`;
 }
 
+function like() {
+	let path = document.querySelector('#iconHeart path');
+	path.setAttribute('fill', 'green')
+	path.setAttribute('stroke', 'green')
+}
+
 document.addEventListener("DOMContentLoaded", function () {
 	getPlayer();
 	creaPlaylist();
