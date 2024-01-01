@@ -27,7 +27,10 @@ function prova(tracklist) {
     let tracks = tracklist.data[i].rank;
     array.push(tracks);
 
-    ordine = array.sort();
+    ordine = array.sort(function(a, b) {
+      return a - b;
+    });
+
     ordine.reverse();
   }
   createTopFive(ordine, tracklist);
