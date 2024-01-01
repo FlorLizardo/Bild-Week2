@@ -28,6 +28,7 @@ function prova(tracklist) {
     array.push(tracks);
 
     ordine = array.sort();
+    ordine.reverse();
   }
   createTopFive(ordine, tracklist);
 }
@@ -82,6 +83,7 @@ function jbArtist(artist) {
   </div>
 </div>
   `;
+
 }
 
 //funzione stampa top5
@@ -113,7 +115,7 @@ function stampaTopFive() {
           width="40px"
           height="40px"
         />
-        <a href="" class="text-decoration-none text-light">
+        <a href="#" class="text-decoration-none text-light" id="name-song-${i}" onclick="clickPlayer('${topFive[i].album.cover_medium}', '${topFive[i].artist.name}', '${i}')">
           ${topFive[i].title}
         </a>
       </div>
@@ -126,6 +128,27 @@ function stampaTopFive() {
     </div> 
     `;
   }
+}
+
+function clickPlayer(coverMedium, artist, index) {
+  
+  let imgPlayer = document.getElementById('imgPlayer');
+  let songPlayer = document.getElementById('songPlayer');
+  let song = document.getElementById(`name-song-${index}`).innerText; 
+
+  imgPlayer.innerHTML = `
+  <img
+  src="${coverMedium}"
+  width="55"
+  height="55"
+  class="object-fit-cover"
+/>
+  `
+
+  songPlayer.innerHTML = `
+  <p class="h6 p-0 m-0 text-truncate">${song}</p>
+  <small class="text-truncate">${artist}</small>
+  `
 }
 
 //stampa card album

@@ -67,7 +67,7 @@ const getSong = (data) => {
 
   for(let i = 0; i <= data.tracks.data.length; i++) {
     //duration track
-    const totalSeconds = data.tracks.data[i].duration;
+    let totalSeconds = data.tracks.data[i].duration;
     let minutes = Math.floor( totalSeconds / 60);
     let seconds = totalSeconds % 60;
     seconds = (seconds < 10) ? '0' + seconds : seconds;
@@ -85,8 +85,11 @@ const getSong = (data) => {
              </div>
              <div class="col-xl-7 pt-3">
                <div class="row">
-                 <div class="col-xl-12 h6 text-light text-capitalize">${data.tracks.data[i].title}</div>               
-                 <div class="col-xl h6 text-secondary text-capitalize">
+               <a href="#" class="text-decoration-none" onclick="clickPlayer('${data.cover_medium}', '${i}')">
+
+                 <div class="col-xl-12 h6 text-light text-capitalize" id="name-song-${i}">${data.tracks.data[i].title}</div>  
+                </a>             
+                 <div class="col-xl h6 text-secondary text-capitalize" id="artist-name-${i}">
                 ${data.artist.name}
                  </div>
                </div>
@@ -97,6 +100,30 @@ const getSong = (data) => {
              
  rowTracks.innerHTML += track;
   }
+
+  
+}
+
+function clickPlayer(coverMedium, index) {
+  
+  let imgPlayer = document.getElementById('imgPlayer');
+  let songPlayer = document.getElementById('songPlayer');
+  let artistName = document.getElementById(`artist-name-${index}`).innerText;
+  let song = document.getElementById(`name-song-${index}`).innerText; 
+
+  imgPlayer.innerHTML = `
+  <img
+  src="${coverMedium}"
+  width="55"
+  height="55"
+  class="object-fit-cover"
+/>
+  `
+
+  songPlayer.innerHTML = `
+  <p class="h6 p-0 m-0 text-truncate">${song}</p>
+  <small class="text-truncate">${artistName}</small>
+  `
 }
 
 
