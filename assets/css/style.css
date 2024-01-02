@@ -44,7 +44,7 @@
  }
  
  .playlistScroll::-webkit-scrollbar-track, .divCenterScroll::-webkit-scrollbar-track {
-  background: transparent;
+  background: #171717;
  }
  
  .playlistScroll:-webkit-scrollbar-thumb, .divCenterScroll:-webkit-scrollbar-thumb {
@@ -99,6 +99,12 @@
 .sfocatura {
   backdrop-filter: blur(10px);
   z-index: -1;
+}
+
+.bg-centrale-opacity {
+  background-color: rgba(0, 0, 0);
+  
+  background: linear-gradient(360deg, rgba(0,0,0,1) 90%, rgba(50, 49, 49, 0.8) 100%);
 }
 
 .amici {

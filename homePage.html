@@ -151,7 +151,7 @@
 				</div>
 
 				<!-- colonna Center  -->
-				<div class="col-xl-8 bg-centrale ps-4">
+				<div class="col-xl-8 bg-centrale p-0 ps-4">
 					<!--pseudo nav-->
 					<div class="row">
 						<div class="col d-flex justify-content-between">
@@ -433,7 +433,7 @@
 									</svg>
 								</button>
 
-								<button class="button bg-transparent border border-0">
+								<button class="button bg-transparent border border-0" id="play-btn">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										width="30"
@@ -447,6 +447,7 @@
 										/>
 									</svg>
 								</button>
+								<audio id="audioPlayer"></audio>
 
 								<button class="button bg-transparent border border-0">
 									<svg
@@ -479,7 +480,15 @@
 								</button>
 							</div>
 
-							<div class="col-xl-12">-----</div>
+							<div class="col-xl-12 d-flex justify-content-center align-items-center gap-1" id="bar-duration-song">
+								<!-- <div>
+									<small class="text-secondary">0:58</small>
+								</div>
+								<div class="bg-secondary rounded rounded-1" style="width: 35rem; height: .3rem;"></div>
+								<div>
+									<small class="text-secondary">1:25</small>
+								</div> -->
+							</div>
 						</div>
 					</div>
 

@@ -108,22 +108,9 @@ function clearResults() {
 }
 
 
-
-
-
-// window.onload = () => {
-//   // Asignar la función fetchSearch al evento de cambio del campo de entrada
-//   document.getElementById('search').addEventListener('input', fetchSearch);
-
-//   // También puedes llamar fetchSearch con un valor predeterminado, si lo necesitas
-//   // fetchSearch('queen');
-// }
-
-
-
     
 window.onload = () => {
   search(searchPlayList);
   document.getElementById('search').addEventListener('input', fetchSearch);
-  // fetchSearch('queen');
+  
 }

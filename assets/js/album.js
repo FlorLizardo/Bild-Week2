@@ -20,7 +20,7 @@ const tracklist = (data) => {
   const bg_jumbotron = document.getElementById('bg-album-jb');
  const rowAlbum = document.getElementById('albumtron');
  bg_jumbotron.style.backgroundImage = `url('${data.cover_xl}')`;
- bg_jumbotron.classList.add('bg_jumbotron')
+//  bg_jumbotron.classList.add('bg_jumbotron')
 
  const totalSeconds = data.duration;
  let hour = Math.floor(totalSeconds / 3600);
@@ -65,7 +65,7 @@ const tracklist = (data) => {
 
 const getSong = (data) => {
 
-  for(let i = 0; i <= data.tracks.data.length; i++) {
+  for(let i = 0; i < data.tracks.data.length; i++) {
     //duration track
     let totalSeconds = data.tracks.data[i].duration;
     let minutes = Math.floor( totalSeconds / 60);
@@ -122,7 +122,7 @@ function clickPlayer(coverMedium, index) {
 
   songPlayer.innerHTML = `
   <p class="h6 p-0 m-0 text-truncate">${song}</p>
-  <small class="text-truncate">${artistName}</small>
+  <p class="text-truncate font-size-list">${artistName}</p>
   `
 }
 

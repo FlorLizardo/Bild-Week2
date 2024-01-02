@@ -55,26 +55,6 @@ function displayJumbotron(data) {
       </div>
     </div>`;
 
-  //player default
-  let imgPlayer = document.getElementById('imgPlayer');
-  let songPlayer = document.getElementById('songPlayer');
-  let coverMedium = data.cover_medium;
-  let song = data.title;
-  let artist = data.artist.name;
-
-  imgPlayer.innerHTML = `
-  <img
-  src="${coverMedium}"
-  width="55"
-  height="55"
-  class="object-fit-cover"
-/>
-  `
-
-  songPlayer.innerHTML = `
-  <p class="h6 p-0 m-0 text-truncate">${song}</p>
-  <small class="text-truncate">${artist}</small>
-  `
 }
 
 /*CARDS LUNGHINE */

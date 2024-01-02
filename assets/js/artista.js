@@ -64,7 +64,7 @@ function jbArtist(artist) {
     <div class="container pe-0" id="jumbotron">
       <div class="mt-5 mb-3 pt-5 bg-opacity ps-3">
         <small>Artista verificato</small>
-        <h1 class="display-1 fw-bold mb-4">${artist.name}</h1>
+        <h1 class="display-1 fw-bold mb-4 text-truncate">${artist.name}</h1>
         <small>${artist.nb_fan} ascoltatori mensili</small>
       </div>
     </div>
@@ -94,7 +94,7 @@ function jbArtist(artist) {
 function stampaTopFive() {
   const popolari = document.getElementById("popolari");
 
-  for (let i = 0; i <= topFive.length; i++) {
+  for (let i = 0; i < topFive.length; i++) {
     console.log(topFive);
 
     //minuti
@@ -150,7 +150,7 @@ function clickPlayer(coverMedium, artist, index) {
 
   songPlayer.innerHTML = `
   <p class="h6 p-0 m-0 text-truncate">${song}</p>
-  <small class="text-truncate">${artist}</small>
+  <p class="text-truncate font-size-list">${artist}</p>
   `
 }
 
