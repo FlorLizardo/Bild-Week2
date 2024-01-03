@@ -8,10 +8,10 @@ const getDisplayJb = () => {
 };
 
 function displayJumbotron(data) {
-  let containerJumbotron = document.getElementById("jumbotron"); //INLINE ****************************************
+  let containerJumbotron = document.getElementById("jumbotron");
 
-  containerJumbotron.innerHTML = ` 
-    <div class="row bg-jumbotron py-3 ps-5 d-none d-xl-block" > 
+  containerJumbotron.innerHTML = `
+    <div class="row bg-jumbotron py-3 ps-5" >
       <div class="col-xl-2 d-flex align-items-center justify-content-end">
         <img
           src="${data.cover_medium}"
@@ -54,7 +54,7 @@ function displayJumbotron(data) {
         </div>
       </div>
     </div>`;
-
+    
   //player default
   let imgPlayer = document.getElementById('imgPlayer');
   let songPlayer = document.getElementById('songPlayer');
