@@ -37,7 +37,7 @@ function prova(tracklist) {
 }
 
 const topFive = [];
-console.log(topFive);
+
 function createTopFive(ordine, tracklist) {
   for (let i = 0; i < 5; i++) {
     for (let j = 0; j < ordine.length; j++) {
@@ -102,7 +102,6 @@ function stampaTopFive() {
   const popolari = document.getElementById("popolari");
 
   for (let i = 0; i < topFive.length; i++) {
-    console.log(topFive);
 
     //minuti
     const totalSeconds = topFive[i].duration;
@@ -125,7 +124,7 @@ function stampaTopFive() {
           width="40px"
           height="40px"
         />
-        <a href="#" class="text-decoration-none text-light" id="name-song-${i}" onclick="clickPlayer('${topFive[i].album.cover_medium}', '${topFive[i].artist.name}', '${i}')">
+        <a href="#" class="text-decoration-none text-light" id="name-song-${i}" onclick="playSongArtisti('${topFive[i].preview}', '${i}')">
           ${topFive[i].title}
         </a>
       </div>
@@ -145,6 +144,8 @@ function clickPlayer(coverMedium, artist, index) {
   let imgPlayer = document.getElementById('imgPlayer');
   let songPlayer = document.getElementById('songPlayer');
   let song = document.getElementById(`name-song-${index}`).innerText; 
+  let duration = calculateDuration(topFive[index].duration);
+  let songPreview = topFive[index].preview;
 
   imgPlayer.innerHTML = `
   <img
@@ -154,12 +155,65 @@ function clickPlayer(coverMedium, artist, index) {
   class="object-fit-cover"
 />
   `
-
   songPlayer.innerHTML = `
   <p class="h6 p-0 m-0 text-truncate">${song}</p>
   <p class="text-truncate font-size-list">${artist}</p>
   `
+  dataSong(duration, songPreview, index);
 }
+
+function calculateDuration(totalSeconds) {
+  let minutes = Math.floor(totalSeconds / 60);
+    let seconds = totalSeconds % 60;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+    return `${minutes}:${seconds}`;	
+}
+
+//play alle canzoni
+
+let play = document.getElementById('play-btn');
+let audioPlayer = document.getElementById('audioPlayer');
+
+
+function dataSong(duration) {
+	let durationSong = document.getElementById('bar-duration-song');
+
+	durationSong.innerHTML = `
+	<div>
+		<small class="text-secondary">0:00</small>
+	</div>
+	<div class="bg-secondary rounded rounded-1" style="width: 35rem; height: .3rem;"></div>
+	<div>
+		<small class="text-secondary">${duration}</small>
+	</div>
+	`
+}
+
+//funzione per assegnare il play
+function togglePlay() {
+	if (audioPlayer.paused) {
+		audioPlayer.play();
+	} else {
+		audioPlayer.pause();
+	}
+}
+
+//funzione principale play alla canzone
+
+function playSongArtisti(preview, index) {
+  
+	audioPlayer.setAttribute('src', `${preview}`);
+  audioPlayer.play();
+  
+  play.addEventListener('click', togglePlay);
+  play.removeEventListener('click', togglePlay);
+  
+  let coverMedium = topFive[index].album.cover_medium;
+  let artist = topFive[index].artist.name;
+
+  clickPlayer(coverMedium, artist, index)
+}
+
 
 //stampa card album
 

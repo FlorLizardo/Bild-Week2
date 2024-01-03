@@ -200,7 +200,9 @@ function barSong(data) {
 	<div>
 		<small class="text-secondary">0:00</small>
 	</div>
-	<div class="bg-secondary rounded rounded-1" style="width: 35rem; height: .3rem;"></div>
+	<div class="bg-secondary rounded rounded-1" style="width: 35rem; height: .3rem;">
+		<div id="progressBar" class="bg-white" style="width: 1%; height: .3rem;"></div>
+	</div>
 	<div>
 		<small class="text-secondary">${duration}</small>
 	</div>
@@ -212,15 +214,41 @@ function playSong(data) {
 	let play = document.getElementById('play-btn');
 	let audioPlayer = document.getElementById('audioPlayer');
 	let preview = data.tracks.data[0].preview;
+	
 	audioPlayer.setAttribute('src', `${preview}`);
 
 	play.addEventListener('click', function() {
+		
 		if(audioPlayer.paused) {
 			audioPlayer.play();
+			move();
 		}else {
 			audioPlayer.pause();
 		}
+
+		
 	})
+	
+}
+
+//progress bar
+let i = 0;
+function move() {
+	if(i == 0) {
+		i = 1;
+		let elem = document.getElementById('progressBar');
+		let width = 1;
+		let id = setInterval(frame, 10);
+		function frame() {
+			if(width >= 100) {
+				clearInterval(id);
+				i = 0;
+			}else {
+				width++;
+				elem.style.width = width + '%';
+			}
+		}
+	}
 }
 
 //like al player

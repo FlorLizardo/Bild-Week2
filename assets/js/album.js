@@ -8,7 +8,7 @@ const getTrackList = () => {
  fetch(secondUrl + id)
    .then((response) => response.json())
    .then((data) => {
-       console.log(data)
+       
      tracklist(data)
      getSong(data)
    })
@@ -85,7 +85,7 @@ const getSong = (data) => {
              </div>
              <div class="col-xl-7 pt-3">
                <div class="row">
-               <a href="#" class="text-decoration-none" onclick="clickPlayer('${data.cover_medium}', '${i}')">
+               <a href="#" class="text-decoration-none" onclick="playSongArtisti('${data.tracks.data[i].preview}', '${i}', '${data.tracks.data[i].album.cover_medium}', '${data.tracks.data[i].duration}')">
 
                  <div class="col-xl-12 h6 text-light text-capitalize" id="name-song-${i}">${data.tracks.data[i].title}</div>  
                 </a>             
@@ -99,31 +99,84 @@ const getSong = (data) => {
              <div class="col-xl-1 text-secondary d-flex align-items-center pt-3">${duration}</div>`
              
  rowTracks.innerHTML += track;
-  }
 
-  
+  }  
 }
 
-function clickPlayer(coverMedium, index) {
-  
+function clickPlayer(index, coverMediumImg, durationSongs) {
+
   let imgPlayer = document.getElementById('imgPlayer');
   let songPlayer = document.getElementById('songPlayer');
   let artistName = document.getElementById(`artist-name-${index}`).innerText;
   let song = document.getElementById(`name-song-${index}`).innerText; 
-
+  let duration = calculateDuration(durationSongs);
+  
   imgPlayer.innerHTML = `
-  <img
-  src="${coverMedium}"
-  width="55"
-  height="55"
-  class="object-fit-cover"
-/>
+    <img
+    src="${coverMediumImg}"
+    width="55"
+    height="55"
+    class="object-fit-cover"
+  />
   `
-
   songPlayer.innerHTML = `
   <p class="h6 p-0 m-0 text-truncate">${song}</p>
   <p class="text-truncate font-size-list">${artistName}</p>
   `
+  dataSong(duration);
+}
+
+
+
+function calculateDuration(totalSeconds) {
+  let minutes = Math.floor(totalSeconds / 60);
+    let seconds = totalSeconds % 60;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+    return `${minutes}:${seconds}`;	
+}
+
+//play alle canzoni
+
+let play = document.getElementById('play-btn');
+let audioPlayer = document.getElementById('audioPlayer');
+
+
+function dataSong(duration) {
+	let durationSong = document.getElementById('bar-duration-song');
+
+	durationSong.innerHTML = `
+	<div>
+		<small class="text-secondary">0:00</small>
+	</div>
+	<div class="bg-secondary rounded rounded-1" style="width: 35rem; height: .3rem;"></div>
+	<div>
+		<small class="text-secondary">${duration}</small>
+	</div>
+	`
+}
+
+//funzione per assegnare il play
+function togglePlay() {
+	if (audioPlayer.paused) {
+		audioPlayer.play();
+	} else {
+		audioPlayer.pause();
+	}
+}
+
+//funzione principale play alla canzone
+
+function playSongArtisti(preview, index, coverMedium, duration) {
+	audioPlayer.setAttribute('src', `${preview}`);
+  audioPlayer.play();
+  
+  play.addEventListener('click', togglePlay);
+  play.removeEventListener('click', togglePlay);
+  
+  let coverMediumImg = coverMedium;
+  let durationSongs = duration;
+
+  clickPlayer( index, coverMediumImg, durationSongs)
 }
 
 
