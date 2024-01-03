@@ -8,10 +8,10 @@ const getDisplayJb = () => {
 };
 
 function displayJumbotron(data) {
-  let containerJumbotron = document.getElementById("jumbotron");
+  let containerJumbotron = document.getElementById("jumbotron"); //INLINE ****************************************
 
-  containerJumbotron.innerHTML = `
-    <div class="row bg-jumbotron py-3 ps-5" >
+  containerJumbotron.innerHTML = ` 
+    <div class="row bg-jumbotron py-3 ps-5 d-none d-xl-block" > 
       <div class="col-xl-2 d-flex align-items-center justify-content-end">
         <img
           src="${data.cover_medium}"
@@ -146,20 +146,25 @@ function stampaCardVerticali(data) {
   let cardAltine = document.getElementById("cardAltine");
 
   let stampina = `
-   <div class="col-xl-2 h-100 my-2">
+   <div class="col-xl-2 col-sm-12 h-100 my-2">
    <div class="card bg-card-verticali text-white">
+   <div class="col-sm-6 col-xl-12">
    <a href="../../album.html?id=${data.id}" class="text-decoration-none"><img
        src="${data.cover_medium}"
-       class="card-img-top object-fit-cover rounded-bottom mx-3 my-2 w-75"
+       class="card-img-top card-img-sm-left object-fit-cover rounded-bottom mx-3 my-2 w-75"
        alt="Immagine Playlist 2"
+       id="albumImg"
      /></a>
+     </div>
      <div class="card-body pt-0">
+     <div class="col-sm-6 col-xl-12 d-sm-flex flex-sm-column">
      <a href="../../album.html?id=${data.id}" class="text-decoration-none"> <p class="card-text h6 text-light pb-1 text-truncate" style="font-size: 12px">
        ${data.title}
        </p></a>
        <a href="../../artista.html?id=${data.contributors[0].id}" class="text-decoration-none"><p class="card-text text-light" style="font-size: 10px">
        ${data.artist.name}
        </p></a>
+       </div>
      </div>
    </div>
  </div>`;
@@ -197,7 +202,7 @@ function stampaCardArtisti(data) {
 
   let stampina = `
   
-  <div class="col-xl-2 my-1">
+  <div class="col-xl-2 col-sm-4 my-1 ">
   <a href="../../artista.html?id=${data.id}" class="text-decoration-none">
    <div class="card bg-card-verticali text-white h-100">
     <img

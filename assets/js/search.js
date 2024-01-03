@@ -34,7 +34,7 @@ function search(arr) {
   arr.forEach(element => {
     const getColorRandom = getColor(color);
     divSearch.innerHTML += `
-    <div class="col-xl-3">
+    <div class="col-xl-3 col-6">
     <a href="#" class="anchor-hover text-decoration-none ">
     <div class="card" style="height: 11.5rem; background-color: ${getColorRandom}">
       <div class="card-body">
@@ -82,7 +82,7 @@ function getSearch(data, query) {
       let results = document.getElementById('search-results');
       results.innerHTML += `
       <div class="row pt-2 ps-3">
-      <div class="col-xl-1 d-flex justify-content-end align-items-center">
+      <div class="col-xl-1 col-sm-2 d-flex justify-content-end align-items-center">
       <img src="${picture}" alt="immagine dell' artista" class="w-75">
       </div>
       <div class="col-3">

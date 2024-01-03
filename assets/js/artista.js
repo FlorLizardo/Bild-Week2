@@ -60,6 +60,7 @@ function jbArtist(artist) {
 
   header.innerHTML = `
   <div class="row px-0" >
+  <div class="col-xl-12 col-sm-12">
   <div class="jumbotron jumbotron-fluid pe-0">
     <div class="container pe-0" id="jumbotron">
       <div class="mt-5 mb-3 pt-5 bg-opacity ps-3">
@@ -69,13 +70,14 @@ function jbArtist(artist) {
       </div>
     </div>
   </div>
+  </div>
 </div>
   `;
 
   favoriti.innerHTML = `
   <div class="row mt-4">
   <h4>Brani che ti piacciono</h4>
-  <div class="col-xl-12 d-flex">
+  <div class="col-xl-12  col-sm-12 d-flex">
     <div class="me-2">
       <img src="${artist.picture_small}" alt="" width="50" height="50" class="rounded-circle">
     </div>
@@ -110,8 +112,8 @@ function stampaTopFive() {
     let index = arrayIndex.indexOf(indiceTrack) + 1;
 
     popolari.innerHTML += `
-    <div class="col-xl-1 pt-2 d-flex justify-content-end align-items-center">${index}</div>
-      <div class="col-xl-5 text-truncate pt-2">
+    <div class="col-xl-1 d-none d-xl-block pt-2 d-flex justify-content-end align-items-center">${index}</div>
+      <div class="col-xl-5 col-sm-6 text-truncate pt-2">
         <img
           src="${topFive[i].album.cover_medium}"
           alt="cover album"
@@ -123,10 +125,10 @@ function stampaTopFive() {
         </a>
       </div>
 
-    <div class="col-xl-3 pt-2 d-flex justify-content-end">
+    <div class="col-xl-3 col-sm-3 pt-4 d-flex justify-content-end">
       <p class="text-white-50">${topFive[i].rank}</p>
     </div>
-    <div class="col-xl-3 pt-2 d-flex justify-content-center">
+    <div class="col-xl-3 col-sm-3 pt-2 d-flex justify-content-center">
       <p class="text-white-50">${duration}</p>
     </div> 
     `;

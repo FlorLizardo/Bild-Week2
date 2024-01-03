@@ -80,23 +80,23 @@ const getSong = (data) => {
    
    const rowTracks = document.getElementById('tracklist');
    let track = 
-   `<div class="col-xl-1 text-secondary d-flex justify-content-end align-items-center pt-3">
+   `<div class="col-xl-1 d-none d-xl-block text-secondary d-flex justify-content-end align-items-center pt-3">
               ${index}
              </div>
-             <div class="col-xl-7 pt-3">
+             <div class="col-xl-7 col-sm-7 pt-3">
                <div class="row">
                <a href="#" class="text-decoration-none" onclick="clickPlayer('${data.cover_medium}', '${i}')">
 
-                 <div class="col-xl-12 h6 text-light text-capitalize" id="name-song-${i}">${data.tracks.data[i].title}</div>  
+                 <div class="col-xl-12 col-sm-12 h6 text-light text-capitalize" id="name-song-${i}">${data.tracks.data[i].title}</div>  
                 </a>             
-                 <div class="col-xl h6 text-secondary text-capitalize" id="artist-name-${i}">
+                 <div class="col-xl col-sm h6 text-secondary text-capitalize" id="artist-name-${i}">
                 ${data.artist.name}
                  </div>
                </div>
              </div>
 
-             <div class="col-xl-3 text-secondary d-flex align-items-center pt-3">${data.tracks.data[i].rank}</div>
-             <div class="col-xl-1 text-secondary d-flex align-items-center pt-3">${duration}</div>`
+             <div class="col-xl-3 col-sm-3 text-secondary d-flex align-items-center pt-3">${data.tracks.data[i].rank}</div>
+             <div class="col-xl-1 col-sm-1 text-secondary d-flex align-items-center pt-3">${duration}</div>`
              
  rowTracks.innerHTML += track;
   }
