@@ -147,7 +147,8 @@ function stampaCardVerticali(data) {
 
   let stampina = `
    <div class="col-xl-2 col-sm-12 h-100 my-2">
-   <div class="card bg-card-verticali text-white">
+   <div class="card bg-card-verticali  text-white">
+   <div class="row">
    <div class="col-sm-6 col-xl-12">
    <a href="../../album.html?id=${data.id}" class="text-decoration-none"><img
        src="${data.cover_medium}"
@@ -156,8 +157,8 @@ function stampaCardVerticali(data) {
        id="albumImg"
      /></a>
      </div>
-     <div class="card-body pt-0">
-     <div class="col-sm-6 col-xl-12 d-sm-flex flex-sm-column">
+     <div class="col-sm-6 col-xl-12 ">
+     <div class="card-body pt-0 mt-sm-3">
      <a href="../../album.html?id=${data.id}" class="text-decoration-none"> <p class="card-text h6 text-light pb-1 text-truncate" style="font-size: 12px">
        ${data.title}
        </p></a>
@@ -165,6 +166,7 @@ function stampaCardVerticali(data) {
        ${data.artist.name}
        </p></a>
        </div>
+     </div>
      </div>
    </div>
  </div>`;
