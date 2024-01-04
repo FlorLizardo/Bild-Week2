@@ -165,7 +165,7 @@ function playerDefault(data) {
 	let songPlayer = document.getElementById("songPlayer");
 	let coverMedium = data.cover_medium;
 	let artistName = data.artist.name;
-	let song = data.title;
+	let song = data.tracks.data[0].title;
 
 	imgPlayer.innerHTML = `
 		<img
@@ -178,15 +178,98 @@ function playerDefault(data) {
 
 	songPlayer.innerHTML = `
 		<p class="h6 p-0 m-0 text-truncate">${song}</p>
-		<small class="text-truncate">${artistName}</small>
+		<p class="text-truncate font-size-list">${artistName}</p>
 		`;
+
+		barSong(data)
 }
 
+//play alle canzoni
+function barSong(data) {
+	let durationSong = document.getElementById('bar-duration-song');
+	//minuti
+
+	const totalSeconds = data.tracks.data[0].duration;
+	let minutes = Math.floor(totalSeconds / 60);
+	let seconds = totalSeconds % 60;
+	seconds = seconds < 10 ? "0" + seconds : seconds;
+	let duration = `${minutes}:${seconds}`;	
+
+	durationSong.innerHTML = `
+	<div>
+		<small class="text-secondary">0:00</small>
+	</div>
+	<div class="bg-secondary rounded rounded-1" style="width: 35rem; height: .3rem;">
+		<div id="progressBar" class="bg-white" style="width: 1%; height: .3rem;"></div>
+	</div>
+	<div>
+		<small class="text-secondary">${duration}</small>
+	</div>
+	`
+	playSong(data)
+}
+
+function playSong(data) {
+	let play = document.getElementById('play-btn');
+	let audioPlayer = document.getElementById('audioPlayer');
+	let preview = data.tracks.data[0].preview;
+	
+	audioPlayer.setAttribute('src', `${preview}`);
+
+	play.addEventListener('click', function() {
+		
+		if(audioPlayer.paused) {
+			audioPlayer.play();
+			// move();
+		}else {
+			audioPlayer.pause();
+			// stopMove();
+		}
+	})
+	
+}
+
+//progress bar
+// let i = 0;
+// let intervalId; 
+
+// function move() {
+//     if (i == 0) {
+//         i = 1;
+//         let elem = document.getElementById('progressBar');
+//         let width = .5;
+//         intervalId = setInterval(frame, 308);
+
+//         function frame() {
+//             if (width >= 100) {
+//                 stopMove();
+//             } else {
+//                 width++;
+//                 elem.style.width = width + '%';
+//             }
+//         }
+//     }
+// }
+
+// function stopMove() {
+//     clearInterval(intervalId);
+//     i = 0;
+// }
+
+
+//like al player
 function like() {
 	let path = document.querySelector('#iconHeart path');
-	path.setAttribute('fill', 'green')
-	path.setAttribute('stroke', 'green')
+	let currentColor = path.getAttribute('fill');
+	if(currentColor === 'green') {
+		path.setAttribute('fill', 'transparent');
+		path.setAttribute('stroke', 'white');
+	}else {
+		path.setAttribute('fill', 'green');
+		path.setAttribute('stroke', 'green');
+	}
 }
+
 
 document.addEventListener("DOMContentLoaded", function () {
 	getPlayer();
