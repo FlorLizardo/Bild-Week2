@@ -146,7 +146,7 @@ function stampaCardVerticali(data) {
   let cardAltine = document.getElementById("cardAltine");
 
   let stampina = `
-   <div class="col-xl-2 col-sm-12 h-100 my-2">
+   <div class="col-xl-2 col-lg-4 col-md-4 col-sm-12 h-100 my-2">
    <div class="card bg-card-verticali  text-white">
    <div class="row">
    <div class="col-sm-6 col-xl-12">
@@ -209,7 +209,7 @@ function stampaCardArtisti(data) {
    <div class="card bg-card-verticali text-white h-100">
     <img
        src="${data.picture_medium}"
-       class="card-img-top object-fit-fill rounded-circle mx-3 my-2 w-75"
+       class="card-img-top object-fit-fill rounded-circle mx-xl-3 mx-sm-3 mx-md-4 mx-lg-5 my-2 w-75"
        alt="Immagine Playlist 2"
      />
     

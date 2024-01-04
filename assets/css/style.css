@@ -258,4 +258,68 @@ font-size: 1rem;
     border-radius: 50%;
     padding: 10px;
   }
+
+  .playlistCol {
+    width: 45%;
+  }
+}
+
+@media screen and (min-width:768px ) and (max-width: 1199px) {
+  .album-jb {
+    margin-top: 0rem;
+  }
+  .album-height {
+    height: 17rem;
+  }
+   .albumSm h1{
+  font-size: 1rem;
+  } 
+  
+  .textSm {
+    font-size: 0.7rem;
+  }
+  .navMobileNone{
+    display: none;}
+
+    #menu {
+      position: fixed;
+      bottom: 0px;
+      width: 100%;
+      text-align: center;
+      background-color: #121212;
+      opacity: .9;
+      margin: 0 auto;
+      z-index: 5;
+    
+    }
+    
+     .form-search{
+      width: 90%;
+      position: fixed;
+      top: 30px;
+      margin: 0 auto;
+      z-index: 3;
+      
+    } 
+  
+  #playerNav {
+    position: fixed;
+    bottom: 61px;
+    background-color: #2c2c2c;
+  }
+  
+  .navmobileDBlock{
+    display: inline;
+  }  
+  
+  nav img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 10px;
+  }
+
+  .playlistCol {
+    width: 45%;
+  }
 }
