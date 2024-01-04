@@ -221,35 +221,42 @@ function playSong(data) {
 		
 		if(audioPlayer.paused) {
 			audioPlayer.play();
-			move();
+			// move();
 		}else {
 			audioPlayer.pause();
+			// stopMove();
 		}
-
-		
 	})
 	
 }
 
 //progress bar
-let i = 0;
-function move() {
-	if(i == 0) {
-		i = 1;
-		let elem = document.getElementById('progressBar');
-		let width = 1;
-		let id = setInterval(frame, 10);
-		function frame() {
-			if(width >= 100) {
-				clearInterval(id);
-				i = 0;
-			}else {
-				width++;
-				elem.style.width = width + '%';
-			}
-		}
-	}
-}
+// let i = 0;
+// let intervalId; 
+
+// function move() {
+//     if (i == 0) {
+//         i = 1;
+//         let elem = document.getElementById('progressBar');
+//         let width = .5;
+//         intervalId = setInterval(frame, 308);
+
+//         function frame() {
+//             if (width >= 100) {
+//                 stopMove();
+//             } else {
+//                 width++;
+//                 elem.style.width = width + '%';
+//             }
+//         }
+//     }
+// }
+
+// function stopMove() {
+//     clearInterval(intervalId);
+//     i = 0;
+// }
+
 
 //like al player
 function like() {
