@@ -181,33 +181,11 @@ function playerDefault(data) {
 		<p class="text-truncate font-size-list">${artistName}</p>
 		`;
 
-		barSong(data)
+		playSong(data)
 }
 
 //play alle canzoni
-function barSong(data) {
-	let durationSong = document.getElementById('bar-duration-song');
-	//minuti
 
-	const totalSeconds = data.tracks.data[0].duration;
-	let minutes = Math.floor(totalSeconds / 60);
-	let seconds = totalSeconds % 60;
-	seconds = seconds < 10 ? "0" + seconds : seconds;
-	let duration = `${minutes}:${seconds}`;	
-
-	durationSong.innerHTML = `
-	<div>
-		<small class="text-secondary">0:00</small>
-	</div>
-	<div class="bg-secondary rounded rounded-1" style="width: 35rem; height: .3rem;">
-		<div id="progressBar" class="bg-white" style="width: 1%; height: .3rem;"></div>
-	</div>
-	<div>
-		<small class="text-secondary">${duration}</small>
-	</div>
-	`
-	playSong(data)
-}
 
 function playSong(data) {
 	let play = document.getElementById('play-btn');

@@ -64,8 +64,15 @@ function jbArtist(artist) {
   <div class="jumbotron jumbotron-fluid pe-0">
     <div class="container pe-0" id="jumbotron">
       <div class="mt-5 mb-3 pt-5 bg-opacity ps-3">
-        <small>Artista verificato</small>
-        <h1 class="display-1 fw-bold mb-4">${artist.name}</h1>
+      <small class="d-flex align-items-center gap-1">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#1372FC" class="bi bi-patch-check-fill" viewBox="0 0 16 16">
+      <path fill="#1372FC" d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636z"/>
+      <path fill="#ffffff" d="M10.354 6.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z"/>
+    </svg>
+    
+        Artista verificato
+      </small>
+        <h1 class="display-1 fw-bold mb-4 text-truncate">${artist.name}</h1>
         <small>${artist.nb_fan} ascoltatori mensili</small>
       </div>
     </div>
@@ -96,7 +103,7 @@ function jbArtist(artist) {
 function stampaTopFive() {
   const popolari = document.getElementById("popolari");
 
-  for (let i = 0; i <= topFive.length; i++) {
+  for (let i = 0; i < topFive.length; i++) {
     console.log(topFive);
 
     //minuti
@@ -120,7 +127,7 @@ function stampaTopFive() {
           width="40px"
           height="40px"
         />
-        <a href="#" class="text-decoration-none text-light" id="name-song-${i}" onclick="clickPlayer('${topFive[i].album.cover_medium}', '${topFive[i].artist.name}', '${i}')">
+        <a href="#" class="text-decoration-none text-light" id="name-song-${i}" onclick="playSongArtisti('${topFive[i].preview}', '${i}')">
           ${topFive[i].title}
         </a>
       </div>
@@ -140,6 +147,8 @@ function clickPlayer(coverMedium, artist, index) {
   let imgPlayer = document.getElementById('imgPlayer');
   let songPlayer = document.getElementById('songPlayer');
   let song = document.getElementById(`name-song-${index}`).innerText; 
+  let duration = calculateDuration(topFive[index].duration);
+  let songPreview = topFive[index].preview;
 
   imgPlayer.innerHTML = `
   <img
@@ -152,9 +161,51 @@ function clickPlayer(coverMedium, artist, index) {
 
   songPlayer.innerHTML = `
   <p class="h6 p-0 m-0 text-truncate">${song}</p>
-  <small class="text-truncate">${artist}</small>
+  <p class="text-truncate">${artist}</p>
   `
+  
 }
+
+function calculateDuration(totalSeconds) {
+  let minutes = Math.floor(totalSeconds / 60);
+    let seconds = totalSeconds % 60;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+    return `${minutes}:${seconds}`;	
+}
+
+//play alle canzoni
+
+let play = document.getElementById('play-btn');
+let audioPlayer = document.getElementById('audioPlayer');
+
+
+
+
+//funzione per assegnare il play
+function togglePlay() {
+	if (audioPlayer.paused) {
+		audioPlayer.play();
+	} else {
+		audioPlayer.pause();
+	}
+}
+
+//funzione principale play alla canzone
+
+function playSongArtisti(preview, index) {
+  
+	audioPlayer.setAttribute('src', `${preview}`);
+  audioPlayer.play();
+  
+  play.addEventListener('click', togglePlay);
+  play.removeEventListener('click', togglePlay);
+  
+  let coverMedium = topFive[index].album.cover_medium;
+  let artist = topFive[index].artist.name;
+
+  clickPlayer(coverMedium, artist, index)
+}
+
 
 //stampa card album
 
