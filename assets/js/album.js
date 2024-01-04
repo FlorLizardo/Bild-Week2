@@ -41,13 +41,13 @@ const tracklist = (data) => {
 
  let album = 
  `<div class="col-12 album-jb bg-opacity d-flex">
- <div class="row">
+ <div class="row pt-md-4 pt-lg-5 pt-xl-0">
     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 text-sm-center ">
       <img
       src="${data.cover_medium}"
       width="190"
       height="190"
-      class="object-fit-cover ms-xl-0 p-xl-2 p-3"
+      class="object-fit-cover ms-xl-0 p-md-0 p-lg-0 p-xl-2 p-3"
       />
     </div>
     <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12 px-3 pt-xl-5 pt-sm-0 pt-0 albumSm d-sm-flex d-flex flex-column flex-sm-column">
