@@ -207,32 +207,6 @@ function playSong(data) {
 	
 }
 
-//progress bar
-// let i = 0;
-// let intervalId; 
-
-// function move() {
-//     if (i == 0) {
-//         i = 1;
-//         let elem = document.getElementById('progressBar');
-//         let width = .5;
-//         intervalId = setInterval(frame, 308);
-
-//         function frame() {
-//             if (width >= 100) {
-//                 stopMove();
-//             } else {
-//                 width++;
-//                 elem.style.width = width + '%';
-//             }
-//         }
-//     }
-// }
-
-// function stopMove() {
-//     clearInterval(intervalId);
-//     i = 0;
-// }
 
 
 //like al player
@@ -247,6 +221,13 @@ function like() {
 		path.setAttribute('stroke', 'green');
 	}
 }
+
+function goBack() {
+	window.history.back()
+  }
+  function goForward() {
+	window.history.back()
+  }
 
 
 document.addEventListener("DOMContentLoaded", function () {
