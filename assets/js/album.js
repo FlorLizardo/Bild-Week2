@@ -40,9 +40,9 @@ const tracklist = (data) => {
  let year = (new Date(date)).getFullYear();
 
  let album = 
- `<div class="col-xl-12 col-sm-12 album-jb bg-opacity d-flex">
+ `<div class="col-12 album-jb bg-opacity d-flex">
  <div class="row">
-    <div class="col-xl-4 col-sm-12 text-sm-center ">
+    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 text-sm-center ">
       <img
       src="${data.cover_medium}"
       width="190"
@@ -50,8 +50,8 @@ const tracklist = (data) => {
       class="object-fit-cover ms-xl-0 p-xl-2 p-3"
       />
     </div>
-    <div class="col-xl-8 col-sm-12 col-12 px-3 pt-xl-5 pt-sm-0 pt-0 albumSm d-sm-flex d-flex flex-column flex-sm-column">
-      <p class="h6 textSm d-none d-xl-block">ALBUM</p>
+    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12 px-3 pt-xl-5 pt-sm-0 pt-0 albumSm d-sm-flex d-flex flex-column flex-sm-column">
+      <p class="h6 textSm d-none d-xl-block d-lg-block d-md-block">ALBUM</p>
       <h1 class="display-5 fw-bold text-truncate order-sm-1 order-1" style="width:30rem;">${data.title}</h1>
       <div class="h6 d-flex order-sm-2 order-2">
         <img src="${data.artist.picture}" width="30px" height="30px" class="rounded-circle me-2 "> 
