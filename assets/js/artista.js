@@ -125,7 +125,7 @@ function stampaTopFive() {
         </a>
       </div>
 
-    <div class="col-xl-3 col-sm-3 pt-4 d-flex justify-content-end">
+    <div class="col-xl-3 col-sm-3 pt-2 d-flex justify-content-end ">
       <p class="text-white-50">${topFive[i].rank}</p>
     </div>
     <div class="col-xl-3 col-sm-3 pt-2 d-flex justify-content-center">

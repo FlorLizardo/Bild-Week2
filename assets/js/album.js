@@ -40,24 +40,26 @@ const tracklist = (data) => {
  let year = (new Date(date)).getFullYear();
 
  let album = 
- `<div class="col-12 album-jb bg-opacity d-flex">
-    <div>
+ `<div class="col-xl-12 col-sm-12 album-jb bg-opacity d-flex">
+ <div class="row">
+    <div class="col-xl-4 col-sm-12 text-sm-center ">
       <img
       src="${data.cover_medium}"
       width="190"
       height="190"
-      class="object-fit-cover ms-0 p-2"
+      class="object-fit-cover ms-xl-0 p-xl-2 p-3"
       />
     </div>
-    <div class="px-3 pt-5">
-      <p class="h6">ALBUM</p>
-      <h1 class="display-5 fw-bold text-truncate" style="width:30rem;">${data.title}</h1>
-      <div class="h6 d-flex">
-        <img src="${data.artist.picture}" width="30px" height="30px" class="rounded-circle me-2"> 
-        <a href="../../artista.html?id=${data.contributors[0].id}" class="text-decoration-none text-light">${data.artist.name}</a> 
-        <p> - ${year} - ${data.nb_tracks} brani,<span class="text-secondary"> ${duration}</span>
+    <div class="col-xl-8 col-sm-12 col-12 px-3 pt-xl-5 pt-sm-0 pt-0 albumSm d-sm-flex d-flex flex-column flex-sm-column">
+      <p class="h6 textSm d-none d-xl-block">ALBUM</p>
+      <h1 class="display-5 fw-bold text-truncate order-sm-1 order-1" style="width:30rem;">${data.title}</h1>
+      <div class="h6 d-flex order-sm-2 order-2">
+        <img src="${data.artist.picture}" width="30px" height="30px" class="rounded-circle me-2 "> 
+        <a href="../../artista.html?id=${data.contributors[0].id}" class="text-decoration-none text-light textSm pt-1 pt-sm-1 pt-xl-0 ">${data.artist.name} </a> 
+        <p class="d-flex order-sm-6 order-6">  <span class="textSm pt-sm-1 pt-1"> - ${year} </span> <span class="d-none d-xl-block"> - ${data.nb_tracks} brani, </span> <span class="text-secondary d-none d-xl-block">  ${duration}</span>
         </p>
       </div>
+    </div>
     </div>
   </div>` 
  rowAlbum.innerHTML = album;
@@ -83,20 +85,20 @@ const getSong = (data) => {
    `<div class="col-xl-1 d-none d-xl-block text-secondary d-flex justify-content-end align-items-center pt-3">
               ${index}
              </div>
-             <div class="col-xl-7 col-sm-7 pt-3">
+             <div class="col-xl-7 col-sm-7  col-7 pt-3">
                <div class="row">
                <a href="#" class="text-decoration-none" onclick="clickPlayer('${data.cover_medium}', '${i}')">
 
-                 <div class="col-xl-12 col-sm-12 h6 text-light text-capitalize" id="name-song-${i}">${data.tracks.data[i].title}</div>  
+                 <div class="col-xl-12 col-sm-12 col-12 h6 text-light text-capitalize" id="name-song-${i}">${data.tracks.data[i].title}</div>  
                 </a>             
-                 <div class="col-xl col-sm h6 text-secondary text-capitalize" id="artist-name-${i}">
+                 <div class="col-xl col-sm col h6 text-secondary text-capitalize" id="artist-name-${i}">
                 ${data.artist.name}
                  </div>
                </div>
              </div>
 
-             <div class="col-xl-3 col-sm-3 text-secondary d-flex align-items-center pt-3">${data.tracks.data[i].rank}</div>
-             <div class="col-xl-1 col-sm-1 text-secondary d-flex align-items-center pt-3">${duration}</div>`
+             <div class="col-xl-3 col-sm-3 col-3 text-secondary d-flex align-items-center pt-3">${data.tracks.data[i].rank}</div>
+             <div class="col-xl-1 col-sm-1 col-1 text-secondary d-flex align-items-center pt-3">${duration}</div>`
              
  rowTracks.innerHTML += track;
   }
