@@ -62,7 +62,7 @@ function jbArtist(artist) {
   <div class="row px-0" >
   <div class="col-xl-12 col-sm-12">
   <div class="jumbotron jumbotron-fluid pe-0">
-    <div class="container pe-0" id="jumbotron">
+    <div class=" pe-0" id="jumbotron">
       <div class="mt-5 mb-3 pt-5 bg-opacity ps-3">
       <small class="d-flex align-items-center gap-1">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#1372FC" class="bi bi-patch-check-fill" viewBox="0 0 16 16">
@@ -120,7 +120,7 @@ function stampaTopFive() {
 
     popolari.innerHTML += `
     <div class="col-xl-1 d-none d-xl-block pt-2 d-flex justify-content-end align-items-center">${index}</div>
-      <div class="col-xl-5 col-sm-6 text-truncate pt-2">
+      <div class="col-xl-5 col-6 text-truncate pt-2">
         <img
           src="${topFive[i].album.cover_medium}"
           alt="cover album"
@@ -132,10 +132,10 @@ function stampaTopFive() {
         </a>
       </div>
 
-    <div class="col-xl-3 col-sm-3 pt-2 d-flex justify-content-end ">
+    <div class="col-3 pt-2 d-flex justify-content-end ">
       <p class="text-white-50">${topFive[i].rank}</p>
     </div>
-    <div class="col-xl-3 col-sm-3 pt-2 d-flex justify-content-center">
+    <div class="col-3 pt-2 d-flex justify-content-center">
       <p class="text-white-50">${duration}</p>
     </div> 
     `;

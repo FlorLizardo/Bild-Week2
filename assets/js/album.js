@@ -67,7 +67,7 @@ const tracklist = (data) => {
 
 const getSong = (data) => {
 
-  for(let i = 0; i <= data.tracks.data.length; i++) {
+  for(let i = 0; i < data.tracks.data.length; i++) {
     //duration track
     let totalSeconds = data.tracks.data[i].duration;
     let minutes = Math.floor( totalSeconds / 60);
@@ -87,9 +87,9 @@ const getSong = (data) => {
              </div>
              <div class="col-xl-7 col-sm-7  col-7 pt-3">
                <div class="row">
-               <a href="#" class="text-decoration-none" onclick="clickPlayer('${data.cover_medium}', '${i}')">
+               <a href="#" class="text-decoration-none"  onclick="playSongArtisti('${data.tracks.data[i].preview}', '${i}', '${data.tracks.data[i].album.cover_medium}')">
 
-                 <div class="col-xl-12 col-sm-12 col-12 h6 text-light text-capitalize" id="name-song-${i}">${data.tracks.data[i].title}</div>  
+                 <div class="col-xl-12 col-sm-12 col-12 h6 text-light text-capitalize " id="name-song-${i}">${data.tracks.data[i].title}</div>  
                 </a>             
                  <div class="col-xl col-sm col h6 text-secondary text-capitalize" id="artist-name-${i}">
                 ${data.artist.name}
@@ -106,7 +106,7 @@ const getSong = (data) => {
   
 }
 
-function clickPlayer(coverMedium, index) {
+function clickPlayer(index, coverMediumImg) {
   
   let imgPlayer = document.getElementById('imgPlayer');
   let songPlayer = document.getElementById('songPlayer');
@@ -115,7 +115,7 @@ function clickPlayer(coverMedium, index) {
 
   imgPlayer.innerHTML = `
   <img
-  src="${coverMedium}"
+  src="${coverMediumImg}"
   width="55"
   height="55"
   class="object-fit-cover"
@@ -124,8 +124,37 @@ function clickPlayer(coverMedium, index) {
 
   songPlayer.innerHTML = `
   <p class="h6 p-0 m-0 text-truncate">${song}</p>
-  <small class="text-truncate">${artistName}</small>
+  <p class="text-truncate font-size-list">${artistName}</p>
   `
+}
+
+//play alle canzoni
+
+let play = document.getElementById('play-btn');
+let audioPlayer = document.getElementById('audioPlayer');
+
+//funzione per assegnare il play
+function togglePlay() {
+	if (audioPlayer.paused) {
+		audioPlayer.play();
+	} else {
+		audioPlayer.pause();
+	}
+}
+
+//funzione principale play alla canzone
+
+function playSongArtisti(preview, index, coverMedium) {
+	audioPlayer.setAttribute('src', `${preview}`);
+  audioPlayer.play();
+  
+  play.addEventListener('click', togglePlay);
+  play.removeEventListener('click', togglePlay);
+  
+  let coverMediumImg = coverMedium;
+  
+
+  clickPlayer( index, coverMediumImg)
 }
 
 
