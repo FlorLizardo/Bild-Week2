@@ -262,26 +262,15 @@
                 </div>
               </div>
             </div>
-          </div>
-
-          <div
-            class="row row-gap-3 px-3 overflow-y-scroll pb-5 playlistScroll"
-            id="playlistSearch"
-            style="height: 100vh"
-          >
-            <div class="col mt-3 ps-3" id="search-results">
-              <!--contenuto dinamico risultati search-->
-            </div>
-            <div class="col-12 mt-5">
-              <h2 class="h4">Sfoglia tutto</h2>
-            </div>
-
-            <!-- contenuto dinamico card playlist-->
-
-            <!--MOBILE-->
-            <div class="d-xl-none d-sm-block d-sm-flex " id="menu">
+            <div
+              class="col-12 d-xl-none d-sm-block d-block d-sm-flex d-flex bg-centrale"
+              id="menu"
+            >
               <!--div extra che contiene menu per mobile-->
-              <div class="col-sm-4 d-sm-flex flex-sm-column">
+
+              <div
+                class="col-sm-4 col-4 d-sm-flex d-flex flex-sm-column flex-column"
+              >
                 <a
                   href="./homePage.html"
                   class="text-decoration-none text-secondary"
@@ -302,7 +291,7 @@
                   <p>Home</p>
                 </a>
               </div>
-              <div class="col-sm-4 text-white">
+              <div class="col-sm-4 col-4 text-white">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="18"
@@ -318,7 +307,7 @@
                 </svg>
                 <p>Cerca</p>
               </div>
-              <div class="col-sm-4 text-white-50">
+              <div class="col-sm-4 col-4 text-white-50">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="18"
@@ -341,6 +330,21 @@
                 <p>La tua libreria</p>
               </div>
             </div>
+          </div>
+
+          <div
+            class="row row-gap-3 px-3 overflow-y-scroll pb-5 playlistScroll"
+            id="playlistSearch"
+            style="height: 100vh"
+          >
+            <div class="col mt-3 ps-3" id="search-results">
+              <!--contenuto dinamico risultati search-->
+            </div>
+            <div class="col-12 mt-5">
+              <h2 class="h4">Sfoglia tutto</h2>
+            </div>
+
+            <!-- contenuto dinamico card playlist-->
           </div>
         </div>
 
@@ -439,32 +443,33 @@
     </div>
 
     <!-- nav player sticky-->
-    <nav
-      class="navbar-nav sticky-bottom d-inline"
-    >
-      <div class="container-fluid py-2 bg-centrale border-top border-dark" id="playerNav">
+    <nav class="navbar-nav sticky-bottom d-inline">
+      <div
+        class="container-fluid py-2 bg-centrale border-top border-dark"
+        id="playerNav"
+      >
         <!--col canzone -->
         <div class="row">
-          <div class="col-xl-2 col-sm">
+          <div class="col-xl-2 col-sm col-6">
             <div class="row">
               <div
-                class="col-xl-4 col-sm p-0 d-flex justify-content-center"
+                class="col-xl-4 col-sm col-2 p-0 d-flex justify-content-center"
                 id="imgPlayer"
               >
                 <!-- <img
-									src="./assets/img/photo_2023-12-14_09-32-24.jpg"
-									width="55"
-									height="55"
-									class="object-fit-cover"
-								/> -->
+               src="./assets/img/photo_2023-12-14_09-32-24.jpg"
+               width="55"
+               height="55"
+               class="object-fit-cover"
+             /> -->
               </div>
 
-              <div class="col-xl-7 col-sm p-0" id="songPlayer">
+              <div class="col-xl-7 col-sm col p-0" id="songPlayer">
                 <!-- <p class="h6 p-0 m-0">Nome canzone</p>
-								<small>Nome artista</small> -->
+             <small>Nome artista</small> -->
               </div>
               <div
-                class="col-xl-1 col-sm d-flex p-0 d-flex justify-content-center align-items-center"
+                class="col-xl-1 col-sm col d-flex p-0 d-flex justify-content-center align-items-center"
               >
                 <button
                   class="button bg-transparent border border-0"
@@ -472,11 +477,11 @@
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
+                    width="15"
+                    height="15"
                     fill="transparent"
                     class="bi bi-heart-fill"
-                    viewBox="0 0 16 16"
+                    viewBox="0 0 18 18"
                     id="iconHeart"
                   >
                     <path
@@ -491,9 +496,11 @@
           </div>
 
           <!--player-->
-          <div class="col-xl-8 col-sm text-center d-sm-flex align-items-sm-center justify-content-sm-center">
+          <div
+            class="col-xl-8 col-sm col text-center d-sm-flex d-flex align-items-sm-center justify-content-sm-center align-items-center justify-content-center"
+          >
             <div class="row">
-              <div class="col-xl-12 col-sm-12 ">
+              <div class="col-xl-12 col-sm-12 col-12">
                 <button
                   class="button bg-transparent border border-0 navMobileNone"
                 >
@@ -582,12 +589,12 @@
                 </button>
               </div>
 
-              <div class="col-xl-12 d-none d-xl-block">-----</div>
+              <div class="col-xl-12 d-none d-xl-block"></div>
             </div>
           </div>
 
           <!--icone side-->
-          <div class="col-xl-2 col-sm d-flex justify-content-between">
+          <div class="col-xl-2 col-sm col d-flex justify-content-between">
             <button class="button bg-transparent border border-0 navMobileNone">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
