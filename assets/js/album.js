@@ -89,7 +89,7 @@ const getSong = (data) => {
                <div class="row">
                <a href="#" class="text-decoration-none"  onclick="playSongArtisti('${data.tracks.data[i].preview}', '${i}', '${data.tracks.data[i].album.cover_medium}')">
 
-                 <div class="col-xl-12 col-sm-12 col-12 h6 text-light text-capitalize " id="name-song-${i}">${data.tracks.data[i].title}</div>  
+                 <div class="col-xl-12 col-sm-12 col-12 h6 text-light text-capitalize text-truncate" id="name-song-${i}">${data.tracks.data[i].title}</div>  
                 </a>             
                  <div class="col-xl col-sm col h6 text-secondary text-capitalize" id="artist-name-${i}">
                 ${data.artist.name}

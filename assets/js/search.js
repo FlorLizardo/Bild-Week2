@@ -82,13 +82,13 @@ function getSearch(data, query) {
       let results = document.getElementById('search-results');
       results.innerHTML += `
       <div class="row pt-2 ps-3">
-      <div class="col-xl-1 col-sm-2 d-flex justify-content-end align-items-center">
+      <div class="col-xl-1 col-2 d-flex justify-content-end align-items-center">
       <img src="${picture}" alt="immagine dell' artista" class="w-75">
       </div>
       <div class="col-3">
       
       <a href="../../album.html?id=${element.album.id}" class="text-decoration-none">
-      <p class="p-0 m-0">${title}</p>
+      <p class="p-0 m-0 text-truncate">${title}</p>
       <small class="text-secondary">${artist}</small>
       </a>
       </div>
@@ -107,23 +107,8 @@ function clearResults() {
   document.getElementById('search-results').innerHTML = '';
 }
 
-
-
-
-
-// window.onload = () => {
-//   // Asignar la función fetchSearch al evento de cambio del campo de entrada
-//   document.getElementById('search').addEventListener('input', fetchSearch);
-
-//   // También puedes llamar fetchSearch con un valor predeterminado, si lo necesitas
-//   // fetchSearch('queen');
-// }
-
-
-
     
 window.onload = () => {
   search(searchPlayList);
   document.getElementById('search').addEventListener('input', fetchSearch);
-  // fetchSearch('queen');
 }
