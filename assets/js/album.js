@@ -55,7 +55,7 @@ const tracklist = (data) => {
       <h1 class="display-5 fw-bold text-truncate order-sm-1 order-1" style="width:30rem;">${data.title}</h1>
       <div class="h6 d-flex order-sm-2 order-2">
         <img src="${data.artist.picture}" width="30px" height="30px" class="rounded-circle me-2 "> 
-        <a href="../../artista.html?id=${data.contributors[0].id}" class="text-decoration-none text-light textSm pt-1 pt-sm-1 pt-xl-0 ">${data.artist.name} </a> 
+        <a href="artista.html?id=${data.contributors[0].id}" class="text-decoration-none text-light textSm pt-1 pt-sm-1 pt-xl-0 ">${data.artist.name} </a> 
         <p class="d-flex order-sm-6 order-6">  <span class="textSm pt-sm-1 pt-1 pt-xl-0"> - ${year} </span> <span class="d-none d-xl-block"> - ${data.nb_tracks} brani, </span> <span class="text-secondary d-none d-xl-block">  ${duration}</span>
         </p>
       </div>

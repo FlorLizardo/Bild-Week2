@@ -23,8 +23,8 @@ function displayJumbotron(data) {
       <div class="col-xl-9">
         <div>
           <small>ALBUM</small>
-          <a href="../../album.html?id=${data.id}" class="text-decoration-none"><h1 class="display-5 text-light fw-bold">${data.title}</h1></a>
-          <a href="../../artista.html?id=${data.contributors[0].id}" class="text-decoration-none"><p class="h6 text-light">${data.artist.name}</p></a>
+          <a href="album.html?id=${data.id}" class="text-decoration-none"><h1 class="display-5 text-light fw-bold">${data.title}</h1></a>
+          <a href="artista.html?id=${data.contributors[0].id}" class="text-decoration-none"><p class="h6 text-light">${data.artist.name}</p></a>
           <p class="h6">Ascolta il nuovo singolo di ${data.artist.name}</p>
         </div>
 
@@ -110,7 +110,7 @@ function cardPlaylist(data) {
         />
         </div>
       <div class="d-flex align-items-center">
-      <a href="../../album.html?id=${data.id}" class="text-decoration-none"><p class="h6 text-light">${data.title}</p></a>
+      <a href="album.html?id=${data.id}" class="text-decoration-none"><p class="h6 text-light">${data.title}</p></a>
       </div>
     </div>`;
   rowPlaylist.innerHTML += stampina;
@@ -150,7 +150,7 @@ function stampaCardVerticali(data) {
    <div class="card bg-card-verticali  text-white">
    <div class="row">
    <div class="col-sm-6 col-xl-12">
-   <a href="../../album.html?id=${data.id}" class="text-decoration-none"><img
+   <a href="album.html?id=${data.id}" class="text-decoration-none"><img
        src="${data.cover_medium}"
        class="card-img-top card-img-sm-left object-fit-cover rounded-bottom mx-3 my-2 w-75"
        alt="Immagine Playlist 2"
@@ -159,10 +159,10 @@ function stampaCardVerticali(data) {
      </div>
      <div class="col-sm-6 col-xl-12 ">
      <div class="card-body pt-0 mt-sm-3">
-     <a href="../../album.html?id=${data.id}" class="text-decoration-none"> <p class="card-text h6 text-light pb-1 text-truncate" style="font-size: 12px">
+     <a href="album.html?id=${data.id}" class="text-decoration-none"> <p class="card-text h6 text-light pb-1 text-truncate" style="font-size: 12px">
        ${data.title}
        </p></a>
-       <a href="../../artista.html?id=${data.contributors[0].id}" class="text-decoration-none"><p class="card-text text-light" style="font-size: 10px">
+       <a href="artista.html?id=${data.contributors[0].id}" class="text-decoration-none"><p class="card-text text-light" style="font-size: 10px">
        ${data.artist.name}
        </p></a>
        </div>
@@ -205,7 +205,7 @@ function stampaCardArtisti(data) {
   let stampina = `
   
   <div class="col-xl-2 col-sm-4 my-1 ">
-  <a href="../../artista.html?id=${data.id}" class="text-decoration-none">
+  <a href="artista.html?id=${data.id}" class="text-decoration-none">
    <div class="card bg-card-verticali text-white h-100">
     <img
        src="${data.picture_medium}"

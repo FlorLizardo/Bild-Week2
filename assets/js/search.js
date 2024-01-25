@@ -87,7 +87,7 @@ function getSearch(data, query) {
       </div>
       <div class="col-3">
       
-      <a href="../../album.html?id=${element.album.id}" class="text-decoration-none">
+      <a href="album.html?id=${element.album.id}" class="text-decoration-none">
       <p class="p-0 m-0 text-truncate">${title}</p>
       <small class="text-secondary">${artist}</small>
       </a>
